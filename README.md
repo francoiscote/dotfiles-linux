@@ -1,5 +1,5 @@
-# dotfiles-gnome
-These are the dotfiles for my GNOME3 setup that runs on Arch Linux. The dotfiles
+# dotfiles
+These are the dotfiles for my GNOME3 or i3 setup that run on Arch Linux. The dotfiles
 are managed by [GNU Stow](https://www.gnu.org/software/stow/).
 
 ## Installation (under Arch)
@@ -22,10 +22,11 @@ $ sudo chmod +x ~/.scripts/*
 ### zsh
 `zsh` depends on (antigen)[https://github.com/zsh-users/antigen/] (available on the AUR for Arch).
 ```
-$ sudo yaourt -S antigen-git
+$ yay -S antigen-git
 $ cd ~/.dotfiles
 $ stow zsh
 ```
+Open a new shell prompt for antigen to install the dependencies.
 
 ### Fonts
 
@@ -35,5 +36,3 @@ $ cd ~/.dotfiles
 $ stow fonts
 $ font-setup
 ```
-
-Open a new shell prompt for antigen to install the dependencies.
