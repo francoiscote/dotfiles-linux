@@ -1,0 +1,32 @@
+{
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Atom One Dark",
+    "editor.tabSize": 2,
+    "editor.fontSize": 15,
+    "editor.fontFamily": "'Operator Mono SSm Lig Medium', 'Fira Code', 'Droid Sans Fallback'",
+    "editor.renderWhitespace": "all",
+    "editor.mouseWheelZoom": true,
+    "files.trimTrailingWhitespace": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "window.menuBarVisibility": "toggle",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true
+    },
+    "[todo]": {
+        "editor.renderWhitespace": "none",
+        "editor.fontSize": 18
+    },
+    "extensions.ignoreRecommendations": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.fontLigatures": true,
+    "material-icon-theme.showUpdateMessage": false,
+    "search.useIgnoreFiles": false,
+    "workbench.colorCustomizations": {
+        "gitDecoration.ignoredResourceForeground": "#5c6370"
+    }
+}

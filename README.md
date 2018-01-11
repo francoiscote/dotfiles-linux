@@ -13,7 +13,8 @@ Create the symbolic links for each component you need.
 
 ```
 $ cd ~/.dotfiles
-$ stow gnome
+$ stow gnome # or i3
+$ stow termine
 $ stow ...
 $ sudo chmod +x ~/.scripts/*
 ```

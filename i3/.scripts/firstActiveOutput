@@ -1,0 +1,2 @@
+#!/bin/sh
+xrandr | grep -E " connected (primary )?[1-9]+" | head -1 | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/"

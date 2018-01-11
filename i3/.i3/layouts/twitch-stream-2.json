@@ -1,0 +1,213 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.270369991887009,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1347,
+               "width": 3376,
+               "x": 32,
+               "y": 61
+            },
+            "name": "Twitch - Chromium",
+            "percent": 0.386685552407932,
+            "swallows": [
+               {
+               // "class": "^Chromium$",
+               // "instance": "^chromium$",
+               // "title": "^Twitch\\ \\-\\ Chromium$",
+               // "transient_for": "^$",
+               // "window_role": "^browser$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            // tabbed split container with 2 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "tabbed",
+            "percent": 0.613314447592068,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 1347,
+                       "width": 3376,
+                       "x": 42,
+                       "y": 71
+                    },
+                    "name": "Francois_js's Dashboard - Twitch - Chromium",
+                    "percent": 0.5,
+                    "swallows": [
+                       {
+                       // "class": "^Chromium$",
+                       // "instance": "^chromium$",
+                       // "title": "^Francois_js\\'s\\ Dashboard\\ \\-\\ Twitch\\ \\-\\ Chromium$",
+                       // "transient_for": "^$",
+                       // "window_role": "^browser$"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "pixel",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 841,
+                       "width": 927,
+                       "x": 0,
+                       "y": 597
+                    },
+                    "name": "OBS 20.1.3-1 (linux) - Profile: Untitled - Scenes: Untitled",
+                    "percent": 0.5,
+                    "swallows": [
+                       {
+                       // "class": "^obs$",
+                       // "instance": "^obs$",
+                       // "title": "^OBS\\ 20\\.1\\.3\\-1\\ \\(linux\\)\\ \\-\\ Profile\\:\\ Untitled\\ \\-\\ Scenes\\:\\ Untitled$",
+                       // "transient_for": "^$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+    ]
+}
+
+{
+    // stacked split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "stacked",
+    "percent": 0.454608455777848,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1347,
+               "width": 1570,
+               "x": 10,
+               "y": 83
+            },
+            "name": "● config - dotfiles (Workspace) - Visual Studio Code",
+            "percent": 0.5,
+            "swallows": [
+               {
+               // "class": "^Code$",
+               // "instance": "^code$",
+               // "title": "^\\●\\ config\\ \\-\\ dotfiles\\ \\(Workspace\\)\\ \\-\\ Visual\\ Studio\\ Code$",
+               // "transient_for": "^$",
+               // "window_role": "^browser\\-window$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 701,
+               "width": 927,
+               "x": 12,
+               "y": 747
+            },
+            "name": "The i3 thread (Page 47) / Applications & Desktop Environments / Arch Linux Forums - Chromium",
+            "percent": 0.5,
+            "swallows": [
+               {
+               // "class": "^Chromium$",
+               // "instance": "^chromium$",
+               // "title": "^The\\ i3\\ thread\\ \\(Page\\ 47\\)\\ \\/\\ Applications\\ \\&\\ Desktop\\ Environments\\ \\/\\ Arch\\ Linux\\ Forums\\ \\-\\ Chromium$",
+               // "transient_for": "^$",
+               // "window_role": "^browser$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.275021552335142,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 304,
+               "width": 904,
+               "x": 1590,
+               "y": 1126
+            },
+            "name": "fcote: i3-save-tree --workspace 5 > .dotfiles/i3/layouts/twitch-stream-2.json",
+            "percent": 0.71275745407551,
+            "swallows": [
+               {
+               // "class": "^Termite$",
+               // "instance": "^termite$",
+               // "title": "^fcote\\:\\ i3\\-save\\-tree\\ \\-\\-workspace\\ 5\\ \\>\\ \\.dotfiles\\/i3\\/layouts\\/twitch\\-stream\\-2\\.json$",
+               // "transient_for": "^$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            // splith split container with 1 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splith",
+            "percent": 0.28724254592449,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 2,
+                    "floating": "user_off",
+                    "geometry": {
+                       "height": 628,
+                       "width": 1000,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "Alert Box Widget - Chromium",
+                    "percent": 1,
+                    "swallows": [
+                       {
+                       // "class": "^Chromium$",
+                       // "instance": "^chromium$",
+                       // "title": "^Alert\\ Box\\ Widget\\ \\-\\ Chromium$",
+                       // "transient_for": "^$",
+                       // "window_role": "^pop\\-up$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+    ]
+}
+

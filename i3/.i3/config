@@ -1,0 +1,456 @@
+# i3 config file (v4)
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+###
+# Constants
+###
+
+  # Mod keys (Mod1=<Alt>, Mod4=<Super>)
+  set $mod Mod4
+
+  # Colors
+  set $black     #000000
+  set $bg        #1f2126
+  set $bgtrans   #1f2126CC
+  set $bglight   #404452
+  set $fg        #5F6B85
+  set $fglight   #ABB2BF
+  set $white     #FFFFFF
+  set $red     #E06C75
+  set $green   #98C379
+  set $yellow  #E5C07B
+  set $blue    #56B6C2
+  set $magenta #C678DD
+  set $cyan    #61AFEF
+
+  # Displays
+  set $laptop "eDP1"
+  set $work1 "DP1-1-8"
+  set $work2 "DP1-2"
+
+  # Gaps Defaults
+  set $default_gaps_inner 10
+  set $default_gaps_outer 0
+  set $large_gaps_inner 40
+  set $large_gaps_outer 100
+
+###
+# General Configuration
+###
+
+  floating_modifier $mod
+  focus_on_window_activation focus
+  force_display_urgency_hint 1000 ms
+  workspace_auto_back_and_forth yes
+
+  mouse_warping none
+
+  # default desktop layout (default is tiling)
+  # workspace_layout tabbed <stacking|tabbed>
+
+
+###
+# Styling - General
+###
+
+  font xft:Droid Sans 9
+  hide_edge_borders none
+  #smart_gaps on
+  #smart_borders on
+
+  # Gaps
+  gaps inner $default_gaps_inner
+  gaps outer $default_gaps_outer
+
+
+  # force remove titlebars for gaps to work correctly
+  new_window pixel
+  for_window [class="^.*"] border pixel 2
+
+
+###
+# Styling - Windows
+###
+#                         border    background text      indicator  child_border
+  client.focused          $cyan     $cyan      $bg       $green     $cyan
+  client.focused_inactive $bg       $bg        $fg       $bglight   $bglight
+  client.unfocused        $bg       $bg        $fg       $bglight   $bglight
+  client.urgent           $red      $bg        $fg       $bglight   $red
+  client.placeholder      $black    $bg        $fg       $black     $bglight
+  client.background       $bg
+
+###
+# Key bindings - General
+###
+
+  # Restart-Related Bindings
+  bindsym $mod+Shift+c reload
+  bindsym $mod+Shift+r restart
+
+  # kill focused window
+  bindsym $mod+x kill
+
+  # autorandr change
+  bindsym $mod+59 exec "autorandr --change"
+
+  # Exit
+  bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+
+###
+# Key bindings - Workspaces
+###
+
+  #navigate workspaces next / previous / Back & Forth
+  bindsym $mod+Ctrl+Right workspace next
+  bindsym $mod+Ctrl+Left workspace prev
+  #bindsym $mod+Tab workspace back_and_forth
+  bindsym $mod+Tab exec rofi -show window
+
+  # switch to workspace with urgent window automatically
+  for_window [urgent=latest] focus
+
+  # Workspace names
+  set $ws1 "1: "
+  set $ws2 "2: "
+  set $ws3 "3: "
+  set $ws4 "4: "
+  set $ws5 "5: "
+  set $ws6 "6: "
+  set $ws7 "7: "
+  set $ws8 "8: "
+  set $ws9 "9: "
+  set $ws10 "10: "
+
+  ###
+  # Workspaces - Monitors Assignements
+  ###
+  workspace $ws1 output $work1
+  workspace $ws2 output $work1
+  workspace $ws3 output $work1
+  workspace $ws4 output $work1
+  workspace $ws5 output $work1
+  workspace $ws6 output $work2
+  workspace $ws7 output $work2
+  workspace $ws8 output $work2
+  workspace $ws9 output $work2
+  workspace $ws10 output $work2
+
+  # switch to workspace
+  bindsym $mod+1 workspace $ws1
+  bindsym $mod+2 workspace $ws2
+  bindsym $mod+3 workspace $ws3
+  bindsym $mod+4 workspace $ws4
+  bindsym $mod+5 workspace $ws5
+  bindsym $mod+6 workspace $ws6
+  bindsym $mod+7 workspace $ws7
+  bindsym $mod+8 workspace $ws8
+  bindsym $mod+9 workspace $ws9
+  bindsym $mod+0 workspace $ws10
+
+  # Move focused container to workspace
+  bindsym $mod+Ctrl+1 move container to workspace number $ws1
+  bindsym $mod+Ctrl+2 move container to workspace number $ws2
+  bindsym $mod+Ctrl+3 move container to workspace number $ws3
+  bindsym $mod+Ctrl+4 move container to workspace number $ws4
+  bindsym $mod+Ctrl+5 move container to workspace number $ws5
+  bindsym $mod+Ctrl+6 move container to workspace number $ws6
+  bindsym $mod+Ctrl+7 move container to workspace number $ws7
+  bindsym $mod+Ctrl+8 move container to workspace number $ws8
+  bindsym $mod+Ctrl+9 move container to workspace number $ws9
+  bindsym $mod+Ctrl+0 move container to workspace number $ws10
+
+  # Move to workspace with focused container
+  bindsym $mod+Shift+1 move container to workspace number $ws1; workspace number 1
+  bindsym $mod+Shift+2 move container to workspace number $ws2; workspace number 2
+  bindsym $mod+Shift+3 move container to workspace number $ws3; workspace number 3
+  bindsym $mod+Shift+4 move container to workspace number $ws4; workspace number 4
+  bindsym $mod+Shift+5 move container to workspace number $ws5; workspace number 5
+  bindsym $mod+Shift+6 move container to workspace number $ws6; workspace number 6
+  bindsym $mod+Shift+7 move container to workspace number $ws7; workspace number 7
+  bindsym $mod+Shift+8 move container to workspace number $ws8; workspace number 8
+  bindsym $mod+Shift+9 move container to workspace number $ws9; workspace number 9
+  bindsym $mod+Shift+0 move container to workspace number $ws10; workspace number 10
+
+
+###
+# Workspaces - Windows Assignements
+###
+  assign [class="wavebox"] workspace $ws4
+  assign [class="Slack"] workspace $ws9
+  assign [class="discord"] workspace $ws9
+  assign [class="Chromium" instance="crx_ojcflmmmcfpacggndoaaflkmcoblhnbh"] workspace $ws6 # Wunderlist Chrome's App ID
+  # Spotify class assignement bugs forces me to move window instead
+  for_window [class="Spotify"] move to workspace number $ws8
+
+###
+# Workspaces - Default Gaps
+###
+  # workspace number 4 gaps outer $large_gaps_outer
+  # workspace number 4 gaps inner $large_gaps_inner
+  # workspace  number 8 gaps outer $large_gaps_outer
+  # workspace  number 8 gaps inner $large_gaps_inner
+  # workspace  number 9 gaps outer $large_gaps_outer
+  # workspace  number 9 gaps inner $large_gaps_inner
+
+###
+# Key bindings - Windows
+###
+  # change focus (+ arrows)
+  bindsym $mod+h focus left
+  bindsym $mod+j focus down
+  bindsym $mod+k focus up
+  bindsym $mod+l focus right
+  bindsym $mod+Left focus left
+  bindsym $mod+Down focus down
+  bindsym $mod+Up focus up
+  bindsym $mod+Right focus right
+
+  # move focused window (+ arrows)
+  bindsym $mod+Shift+h move left
+  bindsym $mod+Shift+j move down
+  bindsym $mod+Shift+k move up
+  bindsym $mod+Shift+l move right
+  bindsym $mod+Shift+Left move left
+  bindsym $mod+Shift+Down move down
+  bindsym $mod+Shift+Up move up
+  bindsym $mod+Shift+Right move right
+
+  # split orientation
+  bindsym $mod+b split h
+  bindsym $mod+v split v
+
+  # toggle fullscreen mode for the focused container
+  bindsym $mod+f fullscreen toggle
+
+  # change container layout (stacked, tabbed, toggle split)
+  bindsym $mod+s layout stacking
+  bindsym $mod+w layout tabbed
+  bindsym $mod+e layout toggle split
+
+  # toggle tiling / floating
+  bindsym $mod+Shift+space floating toggle
+
+  # change focus between tiling / floating windows
+  bindsym $mod+space focus mode_toggle
+
+  # toggle sticky
+  bindsym $mod+Shift+s sticky toggle
+
+  # put YouTube into fullscreen and execute this for media mode
+  bindsym $mod+y fullscreen disable; floating enable; resize set 400 300; sticky enable; move position center
+
+  # Parent-Child Focus
+  bindsym $mod+a focus parent
+  bindsym $mod+Shift+a focus child
+
+  # Move move right window under the current one, display as stack
+  bindsym $mod+m split v; focus right; move left; layout stacking
+
+###
+# Windows - Floating/Stiky Assignements
+###
+  for_window [title="alsamixer"] floating enable border pixel 1
+  for_window [class="Galculator"] floating enable, sticky enable, move position center
+  for_window [class="Pinentry"] floating enable, border pixel 2, sticky enable, move position center
+  for_window [title="File Transfer*"] floating enable
+  for_window [class="feh"] floating enable
+  for_window [class="Lxappearance"] floating enable sticky enable
+  for_window [class="Pavucontrol"] floating enable sticky enable
+  for_window [class="Simple-scan"] floating enable border normal
+  for_window [window_role="pop-up"] floating enable
+  for_window [window_role="bubble"] floating enable
+  for_window [window_role="task_dialog"] floating enable
+  for_window [window_role="Preferences"] floating enable
+  for_window [window_type="dialog"] floating enable
+  for_window [window_type="menu"] floating enable
+  for_window [instance="__scratchpad"] floating enable
+  for_window [class="Blueman-manager"] floating enable
+  for_window [class="Font-manager"] floating enable
+  for_window [class="Thunar" window_type="normal"] floating enable, resize set 1370 880, move position center
+
+###
+# Key bindings - Terminal and Scratchpad
+###
+
+  # New Terminal
+  bindsym $mod+Return exec termite
+
+  # Move current window to the scratchpad
+  bindsym $mod+Shift+minus move scratchpad
+
+  # Show/Hide/Cycle through the scratchpad windows
+  bindsym $mod+minus scratchpad show
+
+###
+# Key bindings - Apps
+###
+
+  # start program launcher
+  bindsym $mod+o exec --no-startup-id rofi -show drun
+
+  # Start Applications
+  bindsym $mod+p exec --no-startup-id thunar
+  bindsym $mod+c exec --no-startup-id galculator
+
+  # Reloads, kills and resrts
+  bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+  bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+  bindsym $mod+t exec --no-startup-id killall compton
+  bindsym $mod+Ctrl+t exec --no-startup-id compton -b
+
+  # Screenshots
+  bindsym Print exec --no-startup-id i3-scrot
+  bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
+  bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+
+
+###
+# Key Bindings - Volume, Media Keys, Brightness
+###
+
+  bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
+  bindsym $mod+F12 exec "xbacklight -inc 10; notify-send 'brightness up'"
+  bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+  bindsym $mod+F11 exec "xbacklight -dec 10; notify-send 'brightness down'"
+  bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 5
+  bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 5
+  bindsym XF86AudioMute exec pulseaudio-ctl mute
+  bindsym XF86AudioPlay exec playerctl play-pause
+  bindsym XF86AudioPause exec playerctl pause
+  bindsym XF86AudioNext exec playerctl next
+  bindsym XF86AudioPrev exec playerctl previous
+
+  bindsym $mod+F9 exec "xrandr --auto"
+
+###
+# Mode - Resize
+###
+  set $mode_resize "  "
+  bindsym $mod+r mode $mode_resize
+  mode $mode_resize {
+    # These bindings trigger as soon as you enter the resize mode
+    bindsym h resize shrink width 1 px or 1 ppt
+    bindsym j resize grow height 1 px or 1 ppt
+    bindsym k resize shrink height 1 px or 1 ppt
+    bindsym l resize grow width 1 px or 1 ppt
+
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 1 px or 1 ppt
+    bindsym Down resize grow height 1 px or 1 ppt
+    bindsym Up resize shrink height 1 px or 1 ppt
+    bindsym Right resize grow width 1 px or 1 ppt
+
+    # Size Presets
+    bindsym 1 mode "default", resize set 1000 600
+    bindsym 2 mode "default", resize set 1500 500
+    bindsym 3 mode "default", resize set 1200 1000
+
+    # exit resize mode: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+  }
+
+
+###
+# Key Bindings - Local workspace Gaps quick shortcuts. Much faster than the "Mode Gaps" below
+###
+
+  # Outer Gaps
+  bindcode $mod+35 gaps outer current plus 10
+  bindcode $mod+34 gaps outer current minus 10
+
+  # Inner Gaps
+  bindcode $mod+48 gaps inner current plus 10
+  bindcode $mod+47 gaps inner current minus 10
+
+###
+# Mode - Gaps
+###
+  # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+  set $mode_gaps Gaps: (o) outer, (i) inner
+  set $mode_gaps_outer Outer Gaps: (+|-|0) local, (Shift + +|-|0) global, (d)efault
+  set $mode_gaps_inner Inner Gaps: (+|-|0) local, (Shift + +|-|0) global, (d)efault
+  bindsym $mod+Shift+g mode "$mode_gaps"
+
+  mode "$mode_gaps" {
+    bindsym o      mode "$mode_gaps_outer"
+    bindsym i      mode "$mode_gaps_inner"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+  }
+  mode "$mode_gaps_inner" {
+    bindsym plus  gaps inner current plus 5
+    bindsym minus gaps inner current minus 5
+    bindsym 0     mode "default", gaps inner current set 0
+    bindsym d     mode "default", gaps inner current set $default_gaps_inner
+
+    bindsym Shift+plus  gaps inner all plus 5
+    bindsym Shift+minus gaps inner all minus 5
+    bindsym Shift+0     mode "default", gaps inner all set 0
+    bindsym Shift+d     mode "default", gaps inner all set $default_gaps_inner
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+  }
+  mode "$mode_gaps_outer" {
+    bindsym plus  gaps outer current plus 5
+    bindsym minus gaps outer current minus 5
+    bindsym 0     mode "default", gaps outer current set 0
+    bindsym d     mode "default", gaps outer current set $default_gaps_outer
+
+    bindsym Shift+plus  gaps outer all plus 5
+    bindsym Shift+minus gaps outer all minus 5
+    bindsym Shift+0     mode "default", gaps outer all set 0
+    bindsym Shift+d     mode "default", gaps outer all set $default_gaps_outer
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+  }
+
+
+###
+# Mode - Power
+###
+  bindsym $mod+Shift+p mode "$mode_power"
+  set $mode_power (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) Shutdown
+  mode "$mode_power" {
+    bindsym l exec --no-startup-id $HOME/.i3/i3exit lock, mode "default"
+    bindsym e exec --no-startup-id $HOME/.i3/i3exit logout, mode "default"
+    bindsym s exec --no-startup-id $HOME/.i3/i3exit suspend, mode "default"
+    bindsym r exec --no-startup-id $HOME/.i3/i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id $HOME/.i3/i3exit shutdown -i, mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+  }
+
+###
+# Mode - Layouts
+###
+  set $layoutMode " (5) Twitch Stream"
+  bindsym $mod+i mode $layoutMode
+  mode $layoutMode {
+    bindsym 5 exec $HOME/.i3/layouts/twitch-stream.sh, mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+  }
+
+###
+# Autostart applications
+###
+exec_always --no-startup-id feh --no-fehbg --bg-fill --randomize ~/Pictures/wallpapers/*
+exec_always --no-startup-id $HOME/.dotfiles/bin/launch_polybar.sh
+
+exec_always --no-startup-id compton -b
+exec_always --no-startup-id dunst
+exec_always --no-startup-id nm-applet
+
+exec --no-startup-id clipit
+exec --no-startup-id redshift-gtk
+exec --no-startup-id blueman-applet
+
+# Autolock (-time in minutes)
+exec_always --no-startup-id xautolock -time 5 -locker "$HOME/.i3/i3exit lock"
