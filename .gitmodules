@@ -1,0 +1,3 @@
+[submodule "conky/harmattan"]
+	path = conky/harmattan
+	url = git@github.com:zagortenay333/Harmattan.git

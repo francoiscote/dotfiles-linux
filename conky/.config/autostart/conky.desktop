@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=conky
+Exec=conky -d -p 10
+StartupNotify=false
+Terminal=false
