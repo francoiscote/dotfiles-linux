@@ -19,6 +19,7 @@ intentions
 language-apache
 language-babel
 language-docker
+language-lua
 linter-eslint
 linter-phpcs
 linter-scss-lint
