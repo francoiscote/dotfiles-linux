@@ -1,6 +1,73 @@
 #!/bin/sh
 
-# Keyboard rate
+#------------------------------------
+# Keyboard Rate
+#------------------------------------
 gsettings set org.gnome.desktop.peripherals.keyboard repeat true
 gsettings set org.gnome.desktop.peripherals.keyboard delay 200
 gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 15
+
+#------------------------------------
+# Night Mode Temp
+#------------------------------------
+gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 5000
+
+#------------------------------------
+# Window Management
+#------------------------------------
+gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier "'<Super>'"
+gsettings set org.gnome.desktop.wm.preferences num-workspaces "8"
+gsettings set org.gnome.desktop.wm.preferences resize-with-right-button "true"
+gsettings set org.gnome.mutter attach-modal-dialogs true
+gsettings set org.gnome.mutter overlay-key 'Super_R'
+gsettings set org.gnome.mutter dynamic-workspaces false
+gsettings set org.gnome.mutter center-new-windows true
+
+
+#------------------------------------
+# WM - Keybindings
+#------------------------------------
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['<Alt><Super>Down']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['<Alt><Super>Up']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 "['<Alt><Super>1']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-2 "['<Alt><Super>2']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-3 "['<Alt><Super>3']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-4 "['<Alt><Super>4']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-5 "['<Alt><Super>5']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-6 "['<Alt><Super>6']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-7 "['<Alt><Super>7']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-8 "['<Alt><Super>8']"
+
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['<Shift><Alt><Super>Down']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['<Shift><Alt><Super>Up']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-1 "['<Shift><Alt><Super>1']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-2 "['<Shift><Alt><Super>2']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-3 "['<Shift><Alt><Super>3']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 "['<Shift><Alt><Super>4']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 "['<Shift><Alt><Super>5']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-6 "['<Shift><Alt><Super>6']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-7 "['<Shift><Alt><Super>7']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-8 "['<Shift><Alt><Super>8']"
+gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Super>f']"
+gsettings set org.gnome.desktop.wm.keybindings close "['<Alt>F4', '<Super>w']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-center "['<Super>c']"
+gsettings set org.gnome.desktop.wm.keybindings show-desktop "['<Super>x']"
+
+#------------------------------------
+# Custom Keybindings
+#------------------------------------
+# Link focusOrStart script in /usr for Gnome to be able to use it
+sudo ln -sf ~/.scripts/focusOrStart /usr/local/bin/focusOrStart
+
+# Define Custom Keybindings
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "app Browser"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "focusOrStart Navigator.Firefox firefox-developer-edition"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "<Super>j"
+#
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name "app Editor"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command "focusOrStart atom.Atom"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding "<Super>k"
+
+
+# Add Custom Keybindings
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']"
