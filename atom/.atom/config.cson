@@ -91,7 +91,6 @@
     scrollSensitivity: 60
     showIndentGuide: true
     showInvisibles: true
-    softWrap: true
     tabType: "soft"
     zoomFontWhenCtrlScrolling: false
   emmet: {}
