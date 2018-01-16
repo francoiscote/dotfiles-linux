@@ -4,7 +4,6 @@
     group: "Utils"
     paths: [
       "/home/fcote/.dotfiles"
-      "/etc/fonts"
     ]
     icon: "icon-tools"
   }
