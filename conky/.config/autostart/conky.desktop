@@ -1,6 +1,7 @@
 [Desktop Entry]
-Type=Application
-Name=conky
 Exec=conky -d -p 10
+Hidden=true
+Name=conky
 StartupNotify=false
 Terminal=false
+Type=Application
