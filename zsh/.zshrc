@@ -51,19 +51,6 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen apply
 
 # -----------------------------------------
-# SHORTCUT COMMANDS
-# -----------------------------------------
-# c -> ~/Code/
-c() { cd ~/Code/$1; }
-_c() { _files -W ~/Code -/; }
-compdef _c c
-
-# h -> ~/
-h() { cd ~/$1; }
-_h() { _files -W ~/ -/; }
-compdef _h h
-
-# -----------------------------------------
 # PATHS
 # -----------------------------------------
 # Zsh
@@ -92,6 +79,19 @@ done
 
 # compinit must be done after sourcing all libs
 compinit -i -d "${HOME}/.zcompdump"
+
+# -----------------------------------------
+# SHORTCUT COMMANDS
+# -----------------------------------------
+# c -> ~/Code/
+c() { cd ~/Code/$1; }
+_c() { _files -W ~/Code -/; }
+compdef _c c
+
+# h -> ~/
+h() { cd ~/$1; }
+_h() { _files -W ~/ -/; }
+compdef _h h
 
 # -----------------------------------------
 # ALIASES
