@@ -64,6 +64,26 @@ _h() { _files -W ~/ -/; }
 compdef _h h
 
 # -----------------------------------------
+# PATHS
+# -----------------------------------------
+# Zsh
+export PATH="$ZSH/bin:$PATH"
+# scripts
+export PATH="$HOME/.scripts:$PATH"
+# local bin
+export PATH="$HOME/.local/bin:$PATH"
+# /usr/bin
+export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+# ruby
+export PATH="/home/fcote/.gem/ruby/2.4.0/bin:$PATH"
+# Man Paths
+export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
+
+
+# -----------------------------------------
 # SOURCE LIB/*.ZSH FILES
 # -----------------------------------------
 for config_file ($DOTFILES/zsh/lib/*.zsh); do
@@ -136,25 +156,6 @@ prompt_nvm() {
   echo "%F{magenta}[$NODE_ICON $nvm_prompt]%F{reset}"
 }
 RPROMPT='$(prompt_nvm)'
-
-# -----------------------------------------
-# PATHS
-# -----------------------------------------
-# Zsh
-export PATH="$ZSH/bin:$PATH"
-# scripts
-export PATH="$HOME/.scripts:$PATH"
-# local bin
-export PATH="$HOME/.local/bin:$PATH"
-# /usr/bin
-export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-# ruby
-export PATH="/home/fcote/.gem/ruby/2.4.0/bin:$PATH"
-# Man Paths
-export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 
 # source private stuff in a .localrc file
 if [[ -f $HOME/.localrc ]]; then
