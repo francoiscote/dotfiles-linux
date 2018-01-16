@@ -20,3 +20,4 @@ node_modules
 .sass-cache
 .nvmrc
 .phpenv-version
+.tmuxp.yaml
