@@ -1,0 +1,4 @@
+# Set rules For selective sync.
+# Check the man page or
+# https://github.com/vitalif/grive2#griveignore
+!Notes
