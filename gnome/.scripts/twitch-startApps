@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+# 1) Atom + Firefox: tile left
+nohup atom --new-window 2>/dev/null &
+nohup firefox-developer-edition --new-window http://github.com/francoiscote 2>/dev/null &
+# 2) Terminal, let's just place the current terminal
+# 3) Firefox: SteamLabs Alert Box Widget
+nohup firefox-developer-edition --new-window https://streamlabs.com/alert-box/v3/0EBC1BEE88B1EC9FD2D9 2>/dev/null &
+# 4) Firefox: a) dashboard, b) Twitch Chat
+nohup firefox-developer-edition https://www.twitch.tv/francois_js/dashboard https://www.twitch.tv/francois_js/chat 2>/dev/null &
+# 5) OBS
+nohup obs 2>/dev/null &
+exit 0

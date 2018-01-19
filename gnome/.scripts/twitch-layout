@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+# 1) Atom + Firefox: tile left
+wmctrl -x -r 'atom.Atom' -e '0,0,0,1720,1384'
+wmctrl -r 'francoiscote' -e '0,0,0,1720,1384'
+# 2) Terminal, let's just place the current terminal
+wmctrl -x -r 'gnome-terminal-server.Gnome-terminal' -e '0,1721,0,950,1160'
+# 3) Firefox: SteamLabs Alert Box Widget
+wmctrl -r 'Alert Box Widget' -e '0,1721,1280,950,196'
+# 4) Firefox: a) dashboard, b) Twitch Chat
+wmctrl -r '- Twitch -' -e '0,2681,0,769,854'
+# 5) OBS
+wmctrl -x -r 'obs.obs' -e '0,2681,962,769,502'
