@@ -35,7 +35,7 @@ monitor-fallback = eDP1
 dpi = -1
 width = 100%
 fixed-center = true
-height = 2.5%
+height = 24px
 
 background = ${colors.background}
 foreground = ${colors.foreground-alt}
@@ -47,14 +47,16 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 0
+module-margin-right = 0
 
-font-0 = "FontAwesome:size=11;3"
-font-1 = "Noto Sans:style=SemiBold:size=10;3"
-font-2 = "Misc Fixed Wide:size=10;3"
+font-0 = "Operator Mono SSm Medium:pixelsize=10;3"
+;font-1 = "Misc Fixed Wide:pixelsize=10;3"
+;font-2 = "Font Awesome 5 Free:size=10;3"
+;font-3 = "Font Awesome 5 Free Solid:size=10;3"
+;font-4 = "Font Awesome 5 Brands:size=10;3"
 
 ;=====================================================
 ; BAR - TOP
@@ -133,7 +135,6 @@ date-alt = " %a %b %d %Y"
 time = "%k:%M"
 time-alt = "%T %Z"
 
-format-prefix = ""
 format-foreground = ${colors.foreground-alt}
 
 label = "%date%, %time%"
@@ -147,8 +148,7 @@ interval = 2
 
 label = %output:0:90:...%
 format-padding = 5
-exec = ~/.config/polybar/mpris.sh
-
+exec = ~/.scripts/polybar/mpris.sh
 
 ;-----------------------------------------------------
 ; MODULE - ARCH UPDATES
@@ -159,7 +159,7 @@ interval = 600
 format = <label>
 format-underline = #dc322f
 label = "%output:0:30%"
-exec = .config/polybar/arch_updates.sh
+exec = ~/.scripts/polybar/arch_updates.sh
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 
 
