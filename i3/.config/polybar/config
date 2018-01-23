@@ -9,6 +9,7 @@
 
 [colors]
 background = #1F2126
+background-alpha = #CC1F2126
 background-alt = #404452
 foreground = #5F6B85
 foreground-alt = #95A2BB
@@ -78,7 +79,7 @@ scroll-down = i3wm-wsprev
 tray-position = right
 tray-padding = 2
 ;tray-transparent = true
-;tray-background = ${colors.background-alt}
+tray-background = ${colors.background}
 
 ;=====================================================
 ; MODULES
