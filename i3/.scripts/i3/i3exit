@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 lock() {
-  $HOME/.dotfiles/i3/i3lock_pixels.sh
+  $HOME/.scripts/i3/i3lock_pixels.sh
 }
 
 case "$1" in

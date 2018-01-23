@@ -9,7 +9,7 @@
   foreground:                  rgba ( 95, 107, 133, 100 % );
   normal-foreground:           @foreground;
   background-color:            #282c34;
-  selected-normal-foreground:  rgba ( 149, 162, 187, 100 % );
+  selected-normal-foreground:  #FFFFFF;
   alternate-normal-background: rgba ( 0, 0, 0, 0 % );
   selected-urgent-foreground:  rgba ( 224, 108, 117, 100 % );
   urgent-foreground:           rgba ( 224, 108, 117, 100 % );
@@ -23,7 +23,7 @@
   normal-background:           rgba ( 0, 0, 0, 0 % );
   lightfg:                     rgba ( 88, 104, 117, 100 % );
   selected-normal-background:  rgba ( 64, 68, 82, 100 % );
-  border-color:                @green;
+  border-color:                @magenta;
   spacing:                     2;
   separatorcolor:              @bordercolor;
   urgent-background:           rgba ( 31, 33, 38, 100 % );
@@ -83,7 +83,7 @@
 }
 #element.selected.normal {
   background-color: @selected-normal-background;
-  text-color:       #FFFFFF;
+  text-color:       @selected-normal-foreground;
 }
 #element.selected.urgent {
   background-color: @selected-urgent-background;
