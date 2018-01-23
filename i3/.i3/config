@@ -111,16 +111,22 @@
   for_window [urgent=latest] focus
 
   # Workspace names
-  set $ws1 "1: "
+  set $ws1 "1: "
   set $ws2 "2: "
   set $ws3 "3: "
   set $ws4 "4: "
   set $ws5 "5: "
   set $ws6 "6: "
   set $ws7 "7: "
-  set $ws8 "8: "
-  set $ws9 "9: "
+  set $ws8 "8: "
+  set $ws9 "9: "
   set $ws10 "10: "
+
+  ###
+  # Workspaces - Default Gaps
+  ###
+  workspace $ws9 gaps outer 40
+  workspace $ws9 gaps inner 60
 
   ###
   # Workspaces - Monitors Assignements
@@ -181,7 +187,7 @@
   assign [class="discord"] workspace $ws9
   assign [class="Chromium" instance="crx_ojcflmmmcfpacggndoaaflkmcoblhnbh"] workspace $ws6 # Wunderlist Chrome's App ID
   # Spotify class assignement bugs forces me to move window instead
-  for_window [class="Spotify"] move to workspace number $ws8
+  for_window [class="Spotify"] floating enable, resize set 1800 1115, move to workspace number $ws8, move position center
 
 ###
 # Workspaces - Default Gaps
@@ -250,6 +256,7 @@
 ###
 # Windows - Floating/Stiky Assignements
 ###
+  for_window [class="wavebox"] floating enable, resize set 1800 1115, move position center
   for_window [title="alsamixer"] floating enable border pixel 1
   for_window [class="Galculator"] floating enable, sticky enable, move position center
   for_window [class="Pinentry"] floating enable, border pixel 2, sticky enable, move position center
@@ -443,6 +450,10 @@
 ###
 exec --no-startup-id compton -b
 exec --no-startup-id redshift-gtk
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# Autolock (-time in minutes)
+exec_always --no-startup-id xautolock -time 5 -locker "$HOME/.i3/i3exit lock"
 
 exec_always --no-startup-id feh --no-fehbg --bg-fill --randomize ~/Pictures/Wallpapers/mountain03.jpg
 exec_always --no-startup-id $HOME/.scripts/launch_polybar.sh
@@ -454,5 +465,4 @@ exec_always --no-startup-id parcellite
 exec_always --no-startup-id grive-indicator
 exec_always --no-startup-id blueman-applet
 
-# Autolock (-time in minutes)
-exec_always --no-startup-id xautolock -time 5 -locker "$HOME/.i3/i3exit lock"
+exec --no-startup-id i3-msg workspace $ws1
