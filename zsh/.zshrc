@@ -14,7 +14,7 @@ export EDITOR=vim
 export QUOTING_STYLE=literal
 
 # fix "xdg-open fork-bomb" export your preferred browser from here
-export BROWSER=/usr/bin/firefox-developer-edition
+export BROWSER=/bin/vivaldi-stable
 
 # -----------------------------------------
 # Default GPG Key

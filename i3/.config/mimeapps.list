@@ -1,0 +1,22 @@
+[Added Associations]
+application/vnd.mozilla.xul+xml=vivaldi-stable.desktop;
+application/xhtml+xml=vivaldi-stable.desktop;
+image/svg+xml=eog.desktop;atom.desktop;
+text/html=vivaldi-stable.desktop;
+text/mml=vivaldi-stable.desktop;
+text/xml=vivaldi-stable.desktop;
+video/mp2t=vlc.desktop;
+video/mp4=vlc.desktop;
+audio/mpeg=vlc.desktop;
+video/x-flv=vlc.desktop;
+application/pdf=evince.desktop;
+
+[Default Applications]
+application/vnd.mozilla.xul+xml=vivaldi-stable.desktop
+application/xhtml+xml=vivaldi-stable.desktop
+text/html=vivaldi-stable.desktop
+text/mml=vivaldi-stable.desktop
+text/xml=vivaldi-stable.desktop
+x-scheme-handler/http=vivaldi-stable.desktop
+x-scheme-handler/https=vivaldi-stable.desktop
+x-scheme-handler/mailto=wavebox.desktop;

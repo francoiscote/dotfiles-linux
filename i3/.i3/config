@@ -244,7 +244,7 @@
   bindsym $mod+Shift+s sticky toggle
 
   # put YouTube into fullscreen and execute this for media mode
-  bindsym $mod+y fullscreen disable; floating enable; resize set 400 300; sticky enable; move position center
+  bindsym $mod+y fullscreen disable; floating enable; resize set 1272 716; sticky enable; move position center
 
   # Parent-Child Focus
   bindsym $mod+a focus parent
