@@ -137,7 +137,7 @@ time-alt = "%T %Z"
 
 format-foreground = ${colors.foreground-alt}
 
-label = "%date%,%time%"
+label = "%date%, %time%"
 
 ;-----------------------------------------------------
 ; MODULE - MUSIC
