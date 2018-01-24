@@ -274,7 +274,7 @@
   for_window [instance="__scratchpad"] floating enable
   for_window [class="Blueman-manager"] floating enable
   for_window [class="Font-manager"] floating enable
-  for_window [class="Thunar" window_type="normal"] floating enable, resize set 1370 880, move position center
+  for_window [class="termite-ranger"] floating enable, resize set 1370 880, move position center
 
 ###
 # Key bindings - Terminal and Scratchpad
@@ -297,7 +297,7 @@
   bindsym $mod+d exec --no-startup-id rofi -show drun
 
   # Start Applications
-  bindsym $mod+p exec --no-startup-id termite -e ranger
+  bindsym $mod+p exec --no-startup-id termite -e ranger --class=termite-ranger
   bindsym $mod+c exec --no-startup-id gnome-calculator
 
   # Reloads, kills and resrts
