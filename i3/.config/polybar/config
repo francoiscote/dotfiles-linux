@@ -144,7 +144,7 @@ label = "%date%,%time%"
 ;-----------------------------------------------------
 [module/music]
 type = custom/script
-interval = 2
+interval = 3
 
 label = %output:0:90:...%
 format-padding = 5
@@ -155,6 +155,7 @@ exec = ~/.scripts/polybar/mpris.sh
 ;-----------------------------------------------------
 [module/volume]
 type = internal/volume
+format-volume-padding = 2
 
 format-volume-prefix = " "
 format-volume-prefix-foreground = ${colors.foreground}
