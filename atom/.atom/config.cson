@@ -175,6 +175,10 @@
     groupPaletteColors: "by file"
     mergeColorDuplicates: true
     sortPaletteColors: "by color"
+  "prettier-atom":
+    formatOnSaveOptions:
+      showInStatusBar: true
+    useEslint: true
   "project-manager":
     alwaysOpenInSameWindow: true
     includeGitRepositories: true

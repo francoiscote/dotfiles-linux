@@ -1,95 +1,113 @@
 {
+    "layout": "splitv",
+    "percent": 0.270369991887009,
+    "type": "con",
+    "nodes": [
+        {
+            "name": "Twitch Chat",
+            "percent": 0.433634544197638,
+            "swallows": [
+               {
+                 "class": "^Vivaldi-stable$",
+                 "title": "^Twitch"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "layout": "tabbed",
+            "percent": 0.566365455802362,
+            "nodes": [
+                {
+                    "name": "Twitch Dashboard",
+                    "percent": 0.5,
+                    "swallows": [
+                       {
+                         "class": "^Vivaldi-stable$",
+                         "title": "^Francois_js"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "name": "OBS",
+                    "percent": 0.5,
+                    "swallows": [
+                      {
+                        "class": "^obs$",
+                        "instance": "^obs$"
+                      }
+                    ],
+                    "type": "con"
+                }
+            ],
+            "type": "con"
+        }
+    ]
+}
 
-    // stacked split container with 2 children
+{
     "layout": "stacked",
-    "percent": 0.460551884234405,
+    "percent": 0.497345882925391,
     "type": "con",
     "nodes": [
         {
-            "name": "Visual Studio Code",
+            "name": "Editor",
             "percent": 0.5,
-            "type": "con",
             "swallows": [
-               {
-               "instance": "^code$",
-               "class": "^Code$"
-               }
-            ]
+              {
+                "class": "^Atom$",
+                "instance": "^atom$"
+              }
+            ],
+            "type": "con"
         },
         {
-            "name": "Chromium",
+            "name": "Browser",
             "percent": 0.5,
-            "type": "con",
             "swallows": [
-               {
-               "instance": "^chromium$",
-               "class": "^Chromium$",
-               "title": "^francoiscote"
-               }
-            ]
+              {
+                "class": "^Vivaldi-stable$",
+                "title": "^francoiscote"
+              }
+            ],
+            "type": "con"
         }
     ]
 }
 
 {
-    // splitv split container with 2 children
     "layout": "splitv",
-    "percent": 0.265690487169257,
+    "percent": 0.2322841251876,
     "type": "con",
     "nodes": [
         {
-            "name": "Termite",
-            "percent": 0.773527372319066,
-            "type": "con",
+            "name": "terminal",
             "swallows": [
-               {
-                "instance": "^termite$",
-               "class": "^Termite$"
-               }
-            ]
+              {
+                "percent": 0.678958764791977,
+                "class": "^Termite$",
+                "instance": "^termite$"
+              }
+            ],
+            "type": "con"
         },
         {
-            "name": "Termite",
-            "percent": 0.226472627680934,
+            "layout": "splith",
+            "percent": 0.321041235208023,
             "type": "con",
-            "swallows": [
-               {
-                "instance": "^termite$",
-                "class": "^Termite$"
-               }
-            ]
-        }
-    ]
-}
-
-{
-    // splitv split container with 2 children
-    "border": "pixel",
-    "floating": "auto_off",
-    "layout": "splitv",
-    "percent": 0.273757628596338,
-    "type": "con",
-    "nodes": [
-        {
-            "percent": 0.527496382054993,
-            "type": "con",
-            "swallows": [
-               {
-               "instance": "^chromium$",
-               "class": "^Chromium$",
-               "title": "^Francois_js's Dashboard"
-               }
-            ]
-        },
-        {
-            "percent": 0.472503617945007,
-            "type": "con",
-            "swallows": [
-               {
-               "instance": "^obs$",
-               "class": "^obs$",
-               "title": "^OBS"
-               }
+            "nodes": [
+                {
+                    "name": "Alert Box Widget",
+                    "percent": 1,
+                    "swallows": [
+                      {
+                        "class": "^Vivaldi-stable$",
+                        "title": "^Alert\\ Box\\ Widget"
+                      }
+                    ],
+                    "type": "con"
+                }
             ]
         }
     ]
