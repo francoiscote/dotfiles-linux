@@ -48,6 +48,10 @@ antigen bundle sindresorhus/pure
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 
+export NVM_LAZY_LOAD=true
+export NVM_AUTO_USE=true
+antigen bundle lukechilds/zsh-nvm
+
 antigen apply
 
 # -----------------------------------------
@@ -107,7 +111,6 @@ alias reload!="source ~/.zshrc";
 # NVM
 # -----------------------------------------
 # nvm source
-export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s $NVM_DIR/bash_completion ] && \. "$NVM_DIR/bash_completion" # This loads bash_completion
 
