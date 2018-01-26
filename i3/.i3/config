@@ -253,6 +253,9 @@
   # Move move right window under the current one, display as stack
   bindsym $mod+m split v; focus right; move left; layout stacking
 
+  # Move container to center of screen
+  bindsym $mod+c move position center
+
 ###
 # Windows - Floating/Stiky Assignements
 ###
@@ -298,7 +301,6 @@
 
   # Start Applications
   bindsym $mod+p exec --no-startup-id termite -e ranger --class=termite-ranger
-  bindsym $mod+c exec --no-startup-id gnome-calculator
 
   # Reloads, kills and resrts
   bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
