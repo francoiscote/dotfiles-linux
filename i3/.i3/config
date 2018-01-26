@@ -312,7 +312,7 @@
   set $maimoptions --hidecursor --quality=3 --bordersize=3 --color=0.8980,0.7529,0.4824,0.8
   bindsym Print exec --no-startup-id "maim $maimoptions ~/Pictures/screenshots/$(date +%s).png"
   bindsym $mod+Print --release exec --no-startup-id "maim -s $maimoptions ~/Pictures/screenshots/$(date +%s).png"
-  bindsym $mod+Shift+Print --release exec --no-startup-id "maim -s $maimoptions | convert - \( +clone -background black -shadow 30x3+5+5 \) +swap -background none -layers merge +repage -bordercolor '#404452' -border 6%x ~/Pictures/screenshots/$(date +%s).png"
+  bindsym $mod+Shift+Print --release exec --no-startup-id "maim -s $maimoptions | convert - \( +clone -background black -shadow 30x3+5+5 \) +swap -background none -layers flatten +repage -gravity NorthWest -splice 10x10 -bordercolor '#404452' -border 6%x ~/Pictures/screenshots/$(date +%s).png"
 
 ###
 # Key Bindings - Volume, Media Keys, Brightness
