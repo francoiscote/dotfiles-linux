@@ -2,7 +2,6 @@ Zen
 aligner
 aligner-javascript
 aligner-scss
-atom-beautify
 atom-ide-ui
 atom-quokka
 autocomplete-modules
