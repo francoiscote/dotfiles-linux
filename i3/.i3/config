@@ -457,14 +457,14 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # Autolock (-time in minutes)
 exec_always --no-startup-id xautolock -time 5 -locker "$HOME/.i3/i3exit lock"
 
-exec_always --no-startup-id feh --no-fehbg --bg-fill --randomize ~/Pictures/Wallpapers/mountain03.jpg
+exec_always --no-startup-id feh --no-fehbg --bg-fill --randomize ~/Pictures/wallpapers/mountains01.jpg
 exec_always --no-startup-id $HOME/.scripts/launch_polybar.sh
 
 exec_always --no-startup-id dunst
 exec_always --no-startup-id nm-applet
 
 exec_always --no-startup-id parcellite
-exec_always --no-startup-id grive-indicator
-exec_always --no-startup-id blueman-applet
+#exec_always --no-startup-id grive-indicator
+#exec_always --no-startup-id blueman-applet
 
 exec --no-startup-id i3-msg workspace $ws1

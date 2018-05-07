@@ -10,7 +10,6 @@ path=($DOTFILES/bin $path)
 fpath=($DOTFILES/lib/completions $fpath)
 
 export CLICOLOR=1
-export EDITOR=vim
 export QUOTING_STYLE=literal
 
 # fix "xdg-open fork-bomb" export your preferred browser from here
