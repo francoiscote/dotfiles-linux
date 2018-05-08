@@ -30,6 +30,7 @@
     "atom-ide-diagnostics-ui":
       showDiagnosticTraces: true
       showDirectoryColumn: true
+    use: {}
   "atom-material-ui":
     colors: {}
     fonts: {}
@@ -81,11 +82,10 @@
     telemetryConsent: "limited"
     useCustomTitleBar: true
   editor:
-    atomicSoftTabs: false
     autoIndentOnPaste: false
     backUpBeforeSaving: true
     confirmCheckoutHeadRevision: false
-    fontFamily: "Operator Mono SSm Lig Medium"
+    fontFamily: "Operator Mono SSm Lig"
     fontSize: 15
     invisibles: {}
     scrollSensitivity: 60

@@ -1,9 +1,7 @@
-Zen
 aligner
 aligner-javascript
 aligner-scss
 atom-ide-ui
-atom-quokka
 autocomplete-modules
 autocomplete-php
 docblockr
@@ -28,5 +26,7 @@ minimap-git-diff
 minimap-hide
 minimap-highlight-selected
 project-manager
+prettier-atom
 react-snippets
 teletype
+Zen
