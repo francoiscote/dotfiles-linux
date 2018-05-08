@@ -47,10 +47,6 @@ antigen bundle sindresorhus/pure
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 
-export NVM_LAZY_LOAD=true
-export NVM_AUTO_USE=true
-antigen bundle lukechilds/zsh-nvm
-
 antigen apply
 
 # -----------------------------------------
@@ -107,57 +103,20 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pa
 alias reload!="source ~/.zshrc";
 
 # -----------------------------------------
-# NVM
-# -----------------------------------------
-# nvm source
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s $NVM_DIR/bash_completion ] && \. "$NVM_DIR/bash_completion" # This loads bash_completion
-
-
-# auto run `nvm use` when .nvmrc is present
-autoload -U add-zsh-hook
-load-nvmrc() {
-  if [[ -f .nvmrc && -r .nvmrc ]]; then
-    nvm use
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-
-# -----------------------------------------
-# PYENV
-# -----------------------------------------
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-# -----------------------------------------
-# PHPBREW
-# -----------------------------------------
-[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
-
-# -----------------------------------------
-# RBENV
-# -----------------------------------------
-# eval "$(rbenv init -)"
-
-# -----------------------------------------
 # RIGHT PROMPT
 # -----------------------------------------
-prompt_nvm() {
-  local nvm_prompt
-  if type nvm >/dev/null 2>&1; then
-    nvm_prompt=$(nvm current 2>/dev/null)
-    [[ "${nvm_prompt}x" == "x" ]] && return
-  elif type node >/dev/null 2>&1; then
-    nvm_prompt="$(node --version)"
+prompt_node() {
+  local node_prompt
+  if type node >/dev/null 2>&1; then
+    node_prompt="$(node --version)"
   else
     return
   fi
-  nvm_prompt=${nvm_prompt}
+  node_prompt=${node_prompt}
   NODE_ICON=$'\u2B22' # ⬢
-  echo "%F{magenta}[$NODE_ICON $nvm_prompt]%F{reset}"
+  echo "%F{magenta}[$NODE_ICON $node_prompt]%F{reset}"
 }
-RPROMPT='$(prompt_nvm)'
+RPROMPT='$(prompt_node)'
 
 # source private stuff in a .localrc file
 if [[ -f $HOME/.localrc ]]; then
