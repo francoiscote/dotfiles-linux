@@ -187,7 +187,7 @@
   assign [class="discord"] workspace $ws9
   assign [class="Chromium" instance="crx_ojcflmmmcfpacggndoaaflkmcoblhnbh"] workspace $ws6 # Wunderlist Chrome's App ID
   # Spotify class assignement bugs forces me to move window instead
-  for_window [class="Spotify"] floating enable, resize set 1830 1120, move to workspace number $ws8, move position center
+  for_window [class="Spotify"] floating enable, resize set 1975 1170, move to workspace number $ws8, move position center
 
 ###
 # Workspaces - Default Gaps
