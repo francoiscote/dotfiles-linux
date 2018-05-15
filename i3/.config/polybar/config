@@ -67,7 +67,7 @@ bottom = false
 
 modules-left = i3
 modules-center = date music
-modules-right = volume arch_updates xkeyboard cpu memory filesystem temperature vpn-network wireless-network wired-network battery
+modules-right = pulseaudio arch_updates xkeyboard cpu memory filesystem temperature vpn-network wireless-network wired-network battery
 
 ;wm-restack = i3
 
@@ -151,16 +151,21 @@ format-padding = 5
 exec = ~/.scripts/polybar/mpris.sh
 
 ;-----------------------------------------------------
-; MODULE - VOLUME
+; MODULE - PULSEAUDIO VOLUME
 ;-----------------------------------------------------
-[module/volume]
-type = internal/volume
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = false
+
 format-volume-padding = 2
 
 format-volume-prefix = " "
 format-volume-prefix-foreground = ${colors.foreground}
 format-volume = <bar-volume> <label-volume>
 label-volume-foreground = ${colors.foreground}
+
+label-muted = " muted "
+label-muted-foreground = ${colors.foreground}
 
 bar-volume-width = 20
 bar-volume-gradient = true
