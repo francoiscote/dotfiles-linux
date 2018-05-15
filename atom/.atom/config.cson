@@ -67,6 +67,8 @@
       "atom-typescript"
       "minimap-linter"
       "linter-ui-default"
+      "editorconfig"
+      "whitespace"
     ]
     followSymlinks: false
     ignoredNames: [
@@ -86,12 +88,11 @@
     backUpBeforeSaving: true
     confirmCheckoutHeadRevision: false
     fontFamily: "Operator Mono SSm Lig"
-    fontSize: 15
     invisibles: {}
     scrollSensitivity: 60
     showIndentGuide: true
     showInvisibles: true
-    tabType: "soft"
+    softTabs: false
     zoomFontWhenCtrlScrolling: false
   emmet: {}
   "exception-reporting":
@@ -177,6 +178,7 @@
     sortPaletteColors: "by color"
   "prettier-atom":
     formatOnSaveOptions:
+      enabled: true
       showInStatusBar: true
     useEslint: true
   "project-manager":
