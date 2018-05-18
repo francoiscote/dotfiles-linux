@@ -13,7 +13,7 @@ export CLICOLOR=1
 export QUOTING_STYLE=literal
 
 # fix "xdg-open fork-bomb" export your preferred browser from here
-export BROWSER=/bin/vivaldi-stable
+export BROWSER=/bin/chromium
 
 # -----------------------------------------
 # Default GPG Key
