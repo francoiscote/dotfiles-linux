@@ -69,6 +69,10 @@
       "linter-ui-default"
       "editorconfig"
       "whitespace"
+      "ide-php"
+      "linter-scss-lint"
+      "linter-eslint"
+      "linter-phpcs"
     ]
     followSymlinks: false
     ignoredNames: [
@@ -88,6 +92,7 @@
     backUpBeforeSaving: true
     confirmCheckoutHeadRevision: false
     fontFamily: "Operator Mono SSm Lig"
+    fontSize: 15
     invisibles: {}
     scrollSensitivity: 60
     showIndentGuide: true
@@ -178,7 +183,6 @@
     sortPaletteColors: "by color"
   "prettier-atom":
     formatOnSaveOptions:
-      enabled: true
       showInStatusBar: true
     useEslint: true
   "project-manager":
