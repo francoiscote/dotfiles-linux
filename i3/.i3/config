@@ -278,7 +278,7 @@
   for_window [class="Blueman-manager"] floating enable
   for_window [class="Font-manager"] floating enable
   for_window [class="termite-ranger"] floating enable, resize set 1370 880, move position center
-
+  for_window [class="zeal"] floating enable, border none
 ###
 # Key bindings - Terminal and Scratchpad
 ###
@@ -457,7 +457,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # Autolock (-time in minutes)
 exec_always --no-startup-id xautolock -time 5 -locker "$HOME/.i3/i3exit lock"
 
-exec_always --no-startup-id feh --no-fehbg --bg-fill --randomize ~/Pictures/wallpapers/mountains01.jpg
+exec_always --no-startup-id feh --no-fehbg --bg-fill --randomize ~/Pictures/Wallpapers/mountains01.jpg
 exec_always --no-startup-id $HOME/.scripts/launch_polybar.sh
 
 exec_always --no-startup-id dunst
