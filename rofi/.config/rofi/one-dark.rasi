@@ -39,6 +39,8 @@
   transparency: "real";
   background-color: @background-color;
   border: 0;
+  position: center;
+  anchor: center;
   font: "Noto Sans SemiBold 18";
 }
 #overlay {
@@ -58,16 +60,18 @@
   text-color: #FFFFFF;
 }
 #listview {
-  fixed-height: 0;
+  fixed-height: false;
+  dynamic:      true;
+  lines:        6;
   border:       2px 0px 0px ;
   border-color: @separatorcolor;
-  spacing:      3px ;
+  spacing:      9px ;
   scrollbar:    false;
   padding:      20px 0px 0px ;
 }
 #element {
   border:  0;
-  padding: 1px ;
+  padding: 1px;
 }
 #element.normal.normal {
   background-color: @normal-background;

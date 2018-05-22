@@ -3,15 +3,14 @@
 rofi.theme: ~/.config/rofi/one-dark
 rofi.color-enabled: true
 rofi.hide-scrollbar: true
-rofi.show-icons: false
-rofi.fixed-num-lines: true
-rofi.lines: 10
+rofi.show-icons: true
+rofi.location: 0
 rofi.width: 30%
 
 ! Modes --------------------------------------------------
 rofi.fuzzy: true
 rofi.modi: drun,window,ssh,run
-rofi.display-drun: 
+rofi.display-drun:  
 rofi.display-run: Run
 rofi.display-window: Windows
 rofi.display-ssh: SSH
