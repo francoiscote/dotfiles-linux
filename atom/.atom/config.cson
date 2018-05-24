@@ -183,8 +183,10 @@
     sortPaletteColors: "by color"
   "prettier-atom":
     formatOnSaveOptions:
+      enabled: true
       showInStatusBar: true
     useEslint: true
+    useStylelint: true
   "project-manager":
     alwaysOpenInSameWindow: true
     includeGitRepositories: true
