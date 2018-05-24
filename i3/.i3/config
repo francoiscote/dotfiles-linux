@@ -182,10 +182,10 @@
 ###
 # Workspaces - Windows Assignements
 ###
-  assign [class="wavebox"] workspace $ws4
+  assign [class="openwmail"] workspace $ws4
   assign [class="Slack"] workspace $ws9
   assign [class="discord"] workspace $ws9
-  assign [class="Chromium" instance="crx_ojcflmmmcfpacggndoaaflkmcoblhnbh"] workspace $ws6 # Wunderlist Chrome's App ID
+  assign [class="Google-chrome" instance="crx_ojcflmmmcfpacggndoaaflkmcoblhnbh"] workspace $ws6 # Wunderlist Chrome's App ID
   # Spotify class assignement bugs forces me to move window instead
   for_window [class="Spotify"] floating enable, resize set 1975 1170, move to workspace number $ws8, move position center
 
@@ -259,10 +259,10 @@
 ###
 # Windows - Floating/Stiky Assignements
 ###
-  for_window [class="wavebox"] floating enable, resize set 1800 1115, move position center
+  for_window [class="openwmail"] floating enable, resize set 1800 1115, move position center  
+  for_window [class="Google-chrome" instance="crx_ojcflmmmcfpacggndoaaflkmcoblhnbh"] floating enable, resize set 1800 1115, move position center # Wunderlist
   for_window [title="alsamixer"] floating enable border pixel 1
   for_window [class="Galculator"] floating enable, sticky enable, move position center
-  for_window [class="Pinentry"] floating enable, border pixel 2, sticky enable, move position center
   for_window [title="File Transfer*"] floating enable
   for_window [class="feh"] floating enable
   for_window [class="Lxappearance"] floating enable sticky enable
@@ -278,7 +278,8 @@
   for_window [class="Blueman-manager"] floating enable
   for_window [class="Font-manager"] floating enable
   for_window [class="termite-ranger"] floating enable, resize set 1370 880, move position center
-  for_window [class="zeal"] floating enable, border none
+  for_window [class="Zeal"] floating enable
+
 ###
 # Key bindings - Terminal and Scratchpad
 ###
@@ -308,11 +309,13 @@
   bindsym $mod+t exec --no-startup-id killall compton
   bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 
-  # Screenshots
-  set $maimoptions --hidecursor --quality=3 --bordersize=3 --color=0.8980,0.7529,0.4824,0.8
-  bindsym Print exec --no-startup-id "maim $maimoptions ~/Pictures/screenshots/$(date +%s).png"
-  bindsym $mod+Print --release exec --no-startup-id "maim -s $maimoptions ~/Pictures/screenshots/$(date +%s).png"
-  bindsym $mod+Shift+Print --release exec --no-startup-id "maim -s $maimoptions | convert - \( +clone -background black -shadow 30x3+5+5 \) +swap -background none -layers flatten +repage -gravity NorthWest -splice 10x10 -bordercolor '#404452' -border 6%x ~/Pictures/screenshots/$(date +%s).png"
+  # Screenshots using Teiler
+  bindsym Print --release exec --no-startup-id "teiler"
+  bindsym $mod+Print --release exec --no-startup-id "teiler --screenshot"  
+  bindsym $mod+Shift+Print --release exec --no-startup-id "teiler --quickcopy area"
+  
+  # copyq
+  bindsym Ctrl+Shift+v exec --no-startup-id "copyq menu"
 
 ###
 # Key Bindings - Volume, Media Keys, Brightness
@@ -463,7 +466,7 @@ exec_always --no-startup-id $HOME/.scripts/launch_polybar.sh
 exec_always --no-startup-id dunst
 exec_always --no-startup-id nm-applet
 
-exec_always --no-startup-id parcellite
+exec_always --no-startup-id copyq
 #exec_always --no-startup-id grive-indicator
 #exec_always --no-startup-id blueman-applet
 

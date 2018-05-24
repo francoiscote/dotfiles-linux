@@ -15,6 +15,11 @@ export QUOTING_STYLE=literal
 # fix "xdg-open fork-bomb" export your preferred browser from here
 export BROWSER=/bin/google-chrome-stable
 
+# Allows Electron apps to trash files
+export ELECTRON_TRASH=trash
+
+export QT_STYLE_OVERIDE=GTK+
+
 # -----------------------------------------
 # Default GPG Key
 # (if you fork this repo, change this to your own!)

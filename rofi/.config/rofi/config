@@ -12,5 +12,5 @@ rofi.fuzzy: true
 rofi.modi: drun,window,ssh,run
 rofi.display-drun:  
 rofi.display-run: Run
-rofi.display-window: Windows
+rofi.display-window: 
 rofi.display-ssh: SSH
