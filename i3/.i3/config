@@ -314,8 +314,8 @@
   bindsym $mod+Print --release exec --no-startup-id "teiler --screenshot"  
   bindsym $mod+Shift+Print --release exec --no-startup-id "teiler --quickcopy area"
   
-  # copyq
-  bindsym Ctrl+Shift+v exec --no-startup-id "copyq menu"
+  # greenclip clipboard manager
+  bindsym $mod+Shift+v exec --no-startup-id "rofi -modi 'clipboard:greenclip print'  -show clipboard"
 
 ###
 # Key Bindings - Volume, Media Keys, Brightness
@@ -466,8 +466,8 @@ exec_always --no-startup-id $HOME/.scripts/launch_polybar.sh
 exec_always --no-startup-id dunst
 exec_always --no-startup-id nm-applet
 
-exec_always --no-startup-id copyq
-#exec_always --no-startup-id grive-indicator
-#exec_always --no-startup-id blueman-applet
+exec_always --no-startup-id greenclip daemon
+# exec_always --no-startup-id grive-indicator
+# exec_always --no-startup-id blueman-applet
 
 exec --no-startup-id i3-msg workspace $ws1
