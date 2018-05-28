@@ -16,7 +16,7 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 50
 # Window Management
 #------------------------------------
 gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier "'<Super>'"
-gsettings set org.gnome.desktop.wm.preferences num-workspaces "8"
+gsettings set org.gnome.desktop.wm.preferences num-workspaces "6"
 gsettings set org.gnome.desktop.wm.preferences resize-with-right-button "true"
 gsettings set org.gnome.mutter attach-modal-dialogs true
 gsettings set org.gnome.mutter overlay-key 'Super_R'
@@ -27,27 +27,23 @@ gsettings set org.gnome.mutter center-new-windows true
 #------------------------------------
 # WM - Keybindings
 #------------------------------------
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['<Alt><Super>Down']"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['<Alt><Super>Up']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['<Ctrl><Alt>Down']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['<Ctrl><Alt>Up']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 "['<Alt><Super>1']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-2 "['<Alt><Super>2']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-3 "['<Alt><Super>3']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-4 "['<Alt><Super>4']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-5 "['<Alt><Super>5']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-6 "['<Alt><Super>6']"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-7 "['<Alt><Super>7']"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-8 "['<Alt><Super>8']"
 
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['<Shift><Alt><Super>Down']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['<Shift><Alt><Super>Up']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-1 "['<Shift><Alt><Super>1']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-2 "['<Shift><Alt><Super>2']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-3 "['<Shift><Alt><Super>3']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 "['<Shift><Alt><Super>4']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 "['<Shift><Alt><Super>5']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-6 "['<Shift><Alt><Super>6']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-7 "['<Shift><Alt><Super>7']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-8 "['<Shift><Alt><Super>8']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['<Shift><Ctrl><Alt>Down']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['<Shift><Ctrl><Alt>Up']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-1 "['<Shift><Ctrl><Alt>1']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-2 "['<Shift><Ctrl><Alt>2']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-3 "['<Shift><Ctrl><Alt>3']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 "['<Shift><Ctrl><Alt>4']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 "['<Shift><Ctrl><Alt>5']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-6 "['<Shift><Ctrl><Alt>6']"
 gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Super>f']"
 gsettings set org.gnome.desktop.wm.keybindings close "['<Alt>F4', '<Super>w']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-center "['<Super>c']"
