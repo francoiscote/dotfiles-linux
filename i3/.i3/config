@@ -453,7 +453,7 @@
 ###
 # Autostart applications
 ###
-exec_always --no-startup-id compton -b
+exec --no-startup-id compton -b
 exec --no-startup-id redshift-gtk
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 

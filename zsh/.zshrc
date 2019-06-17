@@ -54,6 +54,14 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # -----------------------------------------
+# source Awesome Terminal Fonts codepoints
+# -----------------------------------------
+source /usr/share/fonts/awesome-terminal-fonts/devicons-regular.sh
+source /usr/share/fonts/awesome-terminal-fonts/fontawesome-regular.sh
+source /usr/share/fonts/awesome-terminal-fonts/octicons-regular.sh
+source /usr/share/fonts/awesome-terminal-fonts/pomicons-regular.sh
+
+# -----------------------------------------
 # SPACESHIP PROMPT
 # -----------------------------------------
 
