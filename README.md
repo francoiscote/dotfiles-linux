@@ -1,11 +1,18 @@
 # dotfiles
-These are the dotfiles for my GNOME3 or i3 setup that run on Arch Linux. The dotfiles
+These are the dotfiles for my i3wm or GNOME setup that runs on Arch Linux. The dotfiles
 are managed by [GNU Stow](https://www.gnu.org/software/stow/).
 
 ## Installation (under Arch)
+
+### Install Dependencies
 ```
-$ sudo pacman -S stow
-$ git clone git@github.com:francoiscote/dotfiles-gnome.git ~/.dotfiles
+$ sudo pacman -S oh-my-zsh-git zsh-autosuggestions zsh-syntax-highlighting spaceship-prompt-git stow awesome-terminal-fonts
+
+```
+
+### Clone dotfiles
+```
+$ git clone git@github.com:francoiscote/dotfiles.git ~/.dotfiles
 ```
 
 ## Usage
@@ -13,20 +20,11 @@ Create the symbolic links for each component you need.
 
 ```
 $ cd ~/.dotfiles
-$ stow gnome # or i3
-$ stow termine
-$ stow ...
+$ stow i3 # or gnome
+$ stow termite
+$ stow ...[etc]
 $ sudo chmod +x ~/.scripts/*
 ```
-
-### zsh
-`zsh` depends on (antigen)[https://github.com/zsh-users/antigen/] (available on the AUR for Arch).
-```
-$ yay -S antigen-git
-$ cd ~/.dotfiles
-$ stow zsh
-```
-Open a new shell prompt for antigen to install the dependencies.
 
 ### Fonts
 

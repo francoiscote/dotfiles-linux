@@ -259,7 +259,7 @@
 ###
 # Windows - Floating/Stiky Assignements
 ###
-  for_window [class="openwmail"] floating enable, resize set 1800 1115, move position center  
+  for_window [class="openwmail"] floating enable, resize set 1800 1115, move position center
   for_window [class="Google-chrome" instance="crx_ojcflmmmcfpacggndoaaflkmcoblhnbh"] floating enable, resize set 1800 1115, move position center # Wunderlist
   for_window [title="alsamixer"] floating enable border pixel 1
   for_window [class="Galculator"] floating enable, sticky enable, move position center
@@ -311,9 +311,9 @@
 
   # Screenshots using Teiler
   bindsym Print --release exec --no-startup-id "teiler"
-  bindsym $mod+Print --release exec --no-startup-id "teiler --screenshot"  
+  bindsym $mod+Print --release exec --no-startup-id "teiler --screenshot"
   bindsym $mod+Shift+Print --release exec --no-startup-id "teiler --quickcopy area"
-  
+
   # greenclip clipboard manager
   bindsym $mod+Shift+v exec --no-startup-id "rofi -modi 'clipboard:greenclip print'  -show clipboard"
 
@@ -453,7 +453,7 @@
 ###
 # Autostart applications
 ###
-exec --no-startup-id compton -b
+exec_always --no-startup-id compton -b
 exec --no-startup-id redshift-gtk
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
@@ -468,6 +468,6 @@ exec_always --no-startup-id nm-applet
 
 exec_always --no-startup-id greenclip daemon
 # exec_always --no-startup-id grive-indicator
-# exec_always --no-startup-id blueman-applet
+exec_always --no-startup-id blueman-applet
 
 exec --no-startup-id i3-msg workspace $ws1

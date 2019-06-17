@@ -13,7 +13,7 @@ export CLICOLOR=1
 export QUOTING_STYLE=literal
 
 # fix "xdg-open fork-bomb" export your preferred browser from here
-export BROWSER=/bin/google-chrome-stable
+export BROWSER=/bin/firefox-developer-edition
 
 # Allows Electron apps to trash files
 export ELECTRON_TRASH=trash
@@ -34,25 +34,31 @@ setopt multios
 setopt prompt_subst
 setopt interactivecomments
 
-autoload -U compaudit compinit
+autoload -U compinit
 
 # -----------------------------------------
-# PURE PROMPT CUSTOMIZATIONS
+# OH-MY-ZSH
 # -----------------------------------------
-PURE_PROMPT_SYMBOL=">"
+# Path to your oh-my-zsh installation.
+export ZSH="/usr/share/oh-my-zsh"
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+plugins=(git docker docker-compose docker-machine yarn)
+
+source $ZSH/oh-my-zsh.sh
 
 # -----------------------------------------
-# ANTIGEN
+# ZSH plugins
 # -----------------------------------------
-source /usr/share/zsh/share/antigen.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
+# -----------------------------------------
+# SPACESHIP PROMPT
+# -----------------------------------------
 
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-
-antigen apply
+autoload -U promptinit; promptinit
+prompt spaceship
 
 # -----------------------------------------
 # PATHS
@@ -65,9 +71,6 @@ export PATH="$HOME/.scripts:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 # /usr/bin
 export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
 # ruby
 export PATH="/home/fcote/.gem/ruby/2.4.0/bin:$PATH"
 # Man Paths
@@ -96,32 +99,6 @@ compdef _c c
 h() { cd ~/$1; }
 _h() { _files -W ~/ -/; }
 compdef _h h
-
-# -----------------------------------------
-# ALIASES
-# -----------------------------------------
-
-# Pipe my public key to my clipboard.
-alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
-
-# Source my ZSH
-alias reload!="source ~/.zshrc";
-
-# -----------------------------------------
-# RIGHT PROMPT
-# -----------------------------------------
-prompt_node() {
-  local node_prompt
-  if type node >/dev/null 2>&1; then
-    node_prompt="$(node --version)"
-  else
-    return
-  fi
-  node_prompt=${node_prompt}
-  NODE_ICON=$'\u2B22' # ⬢
-  echo "%F{magenta}[$NODE_ICON $node_prompt]%F{reset}"
-}
-RPROMPT='$(prompt_node)'
 
 # source private stuff in a .localrc file
 if [[ -f $HOME/.localrc ]]; then

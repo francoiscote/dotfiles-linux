@@ -3,7 +3,7 @@
 # From instructions here: https://gist.github.com/cryzed/e002e7057435f02cc7894b9e748c5671
 
 # 1. Install font packages
-yay -S fonts-meta-extended-lt fonts-meta-base ttf-emojione-color --noconfirm
+yay -S fonts-meta-extended-lt fonts-meta-base ttf-emojione --noconfirm
 
 # 2. Create the following symlinks using root to instruct freetype2 to use good-looking rendering defaults
 sudo ln -sf /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d
