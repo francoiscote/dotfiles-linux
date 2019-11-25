@@ -29,7 +29,7 @@
   set $work2 "DP1-2"
 
   # Gaps Defaults
-  set $default_gaps_inner 10
+  set $default_gaps_inner 30
   set $default_gaps_outer 0
   set $large_gaps_inner 40
   set $large_gaps_outer 100
@@ -53,7 +53,7 @@
 # Styling - General
 ###
 
-  font xft:Droid Sans 9
+  font xft:Roboto Medium 8
   hide_edge_borders none
   #smart_gaps on
   #smart_borders on
@@ -61,7 +61,6 @@
   # Gaps
   gaps inner $default_gaps_inner
   gaps outer $default_gaps_outer
-
 
   # force remove titlebars for gaps to work correctly
   new_window pixel
@@ -72,11 +71,11 @@
 # Styling - Windows
 ###
 #                         border    background text      indicator  child_border
-  client.focused          $cyan     $cyan      $bg       $green     $cyan
-  client.focused_inactive $bg       $bg        $fg       $bglight   $bglight
-  client.unfocused        $bg       $bg        $fg       $bglight   $bglight
-  client.urgent           $red      $bg        $fg       $bglight   $red
-  client.placeholder      $black    $bg        $fg       $black     $bglight
+  client.focused          $blue     $blue      $bg       $blue   $red
+  client.focused_inactive $bg       $bg        $fg       $bg        $bg-alt
+  client.unfocused        $bg       $bg        $fg       $bg        $bg-alt
+  client.urgent           $red      $bg        $fg       $red       $red
+  client.placeholder      $black    $bg        $fg       $black     $bg-alt
   client.background       $bg
 
 ###
@@ -105,26 +104,29 @@
   bindsym $mod+Ctrl+Right workspace next
   bindsym $mod+Ctrl+Left workspace prev
   bindsym $mod+Tab workspace back_and_forth
-  bindsym Mod1+Tab exec rofi -show window
+  # bindsym Mod1+Tab exec rofi -show window -kb-accept-entry "!Alt-Tab,Return" -kb-row-down "Alt-Tab" -kb-cancel "Alt-Escape,Escape"
+
 
   # switch to workspace with urgent window automatically
   for_window [urgent=latest] focus
 
   # Workspace names
-  set $ws1 "1: "
-  set $ws2 "2: "
+  set $ws1 "1: "
+  set $ws2 "2: "
   set $ws3 "3: "
   set $ws4 "4: "
   set $ws5 "5: "
   set $ws6 "6: "
   set $ws7 "7: "
-  set $ws8 "8: "
-  set $ws9 "9: "
-  set $ws10 "10: "
+  set $ws8 "8: "
+  set $ws9 "9: "
+  set $ws10 "10: "
 
   ###
   # Workspaces - Default Gaps
   ###
+  workspace $ws4 gaps outer 40
+  workspace $ws4 gaps inner 60
   workspace $ws9 gaps outer 40
   workspace $ws9 gaps inner 60
 
@@ -182,12 +184,13 @@
 ###
 # Workspaces - Windows Assignements
 ###
-  assign [class="openwmail"] workspace $ws4
+  assign [class="Station"] workspace $ws4
+  assign [class="Franz"] workspace $ws9
   assign [class="Slack"] workspace $ws9
   assign [class="discord"] workspace $ws9
-  assign [class="Google-chrome" instance="crx_ojcflmmmcfpacggndoaaflkmcoblhnbh"] workspace $ws6 # Wunderlist Chrome's App ID
   # Spotify class assignement bugs forces me to move window instead
   for_window [class="Spotify"] floating enable, resize set 1975 1170, move to workspace number $ws8, move position center
+  assign [class="pritunl"] workspace $ws10
 
 ###
 # Workspaces - Default Gaps
@@ -259,15 +262,16 @@
 ###
 # Windows - Floating/Stiky Assignements
 ###
-  for_window [class="openwmail"] floating enable, resize set 1800 1115, move position center
-  for_window [class="Google-chrome" instance="crx_ojcflmmmcfpacggndoaaflkmcoblhnbh"] floating enable, resize set 1800 1115, move position center # Wunderlist
-  for_window [title="alsamixer"] floating enable border pixel 1
-  for_window [class="Galculator"] floating enable, sticky enable, move position center
-  for_window [title="File Transfer*"] floating enable
+  for_window [class="pritunl"] floating enable
   for_window [class="feh"] floating enable
   for_window [class="Lxappearance"] floating enable sticky enable
   for_window [class="Pavucontrol"] floating enable sticky enable
   for_window [class="Simple-scan"] floating enable border normal
+  for_window [class="Blueman-manager"] floating enable
+  for_window [class="Font-manager"] floating enable
+  for_window [class="termite-ranger"] floating enable, resize set 1370 880, move position center
+  for_window [class="Zeal"] floating enable
+  for_window [class="zoom"] floating enable
   for_window [window_role="pop-up"] floating enable
   for_window [window_role="bubble"] floating enable
   for_window [window_role="task_dialog"] floating enable
@@ -275,17 +279,14 @@
   for_window [window_type="dialog"] floating enable
   for_window [window_type="menu"] floating enable
   for_window [instance="__scratchpad"] floating enable
-  for_window [class="Blueman-manager"] floating enable
-  for_window [class="Font-manager"] floating enable
-  for_window [class="termite-ranger"] floating enable, resize set 1370 880, move position center
-  for_window [class="Zeal"] floating enable
 
 ###
 # Key bindings - Terminal and Scratchpad
 ###
 
-  # New Terminal
+  # New Terminals
   bindsym $mod+Return exec termite
+  bindsym $mod+Shift+Return exec termite
 
   # Move current window to the scratchpad
   bindsym $mod+Shift+minus move scratchpad
@@ -297,8 +298,11 @@
 # Key bindings - Apps
 ###
 
-  # start program launcher
+  # start Rofi
   bindsym $mod+d exec --no-startup-id rofi -show drun
+
+  # start rofi-calc
+  bindsym $mod+equal exec rofi -show calc -modi calc -no-show-match -no-sort
 
   # Start Applications
   bindsym $mod+p exec --no-startup-id termite -e ranger --class=termite-ranger
@@ -460,14 +464,13 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # Autolock (-time in minutes)
 exec_always --no-startup-id xautolock -time 5 -locker "$HOME/.i3/i3exit lock"
 
-exec_always --no-startup-id feh --no-fehbg --bg-fill --randomize ~/Pictures/Wallpapers/mountains01.jpg
+exec_always --no-startup-id feh --no-fehbg --bg-fill /usr/share/wallpapers/wallpaper.jpg
 exec_always --no-startup-id $HOME/.scripts/launch_polybar.sh
+
+exec_always --no-startup-id greenclip daemon
 
 exec_always --no-startup-id dunst
 exec_always --no-startup-id nm-applet
-
-exec_always --no-startup-id greenclip daemon
-# exec_always --no-startup-id grive-indicator
 exec_always --no-startup-id blueman-applet
 
 exec --no-startup-id i3-msg workspace $ws1

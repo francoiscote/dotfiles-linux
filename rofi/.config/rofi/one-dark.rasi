@@ -41,7 +41,7 @@
   border: 0;
   position: center;
   anchor: center;
-  font: "Noto Sans SemiBold 18";
+  font: "Roboto 16";
 }
 #overlay {
 
@@ -130,7 +130,7 @@
 #inputbar {
   spacing:    0;
   text-color: @normal-foreground;
-  padding:    1px ;
+  padding:    1px;
 }
 #case-indicator {
   spacing:    0;

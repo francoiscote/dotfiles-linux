@@ -12,8 +12,10 @@ fpath=($DOTFILES/lib/completions $fpath)
 export CLICOLOR=1
 export QUOTING_STYLE=literal
 
+export EDITOR=vim
+
 # fix "xdg-open fork-bomb" export your preferred browser from here
-export BROWSER=/bin/firefox-developer-edition
+export BROWSER=/bin/google-chrome-stable
 
 # Allows Electron apps to trash files
 export ELECTRON_TRASH=trash
@@ -79,6 +81,10 @@ export PATH="$HOME/.scripts:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 # /usr/bin
 export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
+# Node
+export PATH="`yarn global bin`:$PATH"
+export PATH="$HOME/.node_modules/bin:$PATH"
+export npm_config_prefix=~/.node_modules
 # ruby
 export PATH="/home/fcote/.gem/ruby/2.4.0/bin:$PATH"
 # Man Paths

@@ -3,7 +3,7 @@ allow_bold = false
 #audible_bell = false
 #clickable_url = true
 #dynamic_title = true
-font = Operator Mono SSm Lig Medium 10
+font = Operator Mono SSm Lig 8
 #fullscreen = true
 #geometry = 640x480
 #icon_name = terminal
@@ -44,9 +44,9 @@ cursor_shape = underline
 #cursor = #dcdccc
 #cursor_foreground = #dcdccc
 
-foreground = #abb2bf
+foreground = #c29ba3
 #foreground_bold = #ffffff
-background = rgba(40, 44, 52, 1)
+background = #f9f5f4
 
 # 20% background transparency (requires a compositor)
 #background = rgba(63, 63, 63, 0.8)
@@ -56,31 +56,18 @@ highlight = #e5c07b
 
 # Colors from color0 to color254 can be set
 color0 = #0f1011
-color1 = #e06c75
-color2 = #98c379
-color3 = #e5c07b
-color4 = #56b6c2
-color5 = #c678dd
-color6 = #61afef
-color7 = #3e4451
-color8 = #5C6370
-color9 = #e06c75
-color10 = #98c379
-color11 = #e5c07b
-color12 = #56b6c2
-color13 = #c678dd
-color14 = #61afef
+color1 = #db90a7
+color2 = #87b6b6
+color3 = #d3a656
+color4 = #32abde
+color5 = #be88d9
+color6 = #958ac5
+color7 = #4a4543
+color8 = #e7cecd
+color9 = #db90a7
+color10 = #87b6b6
+color11 = #d3a656
+color12 = #32abde
+color13 = #be88d9
+color14 = #958ac5
 color15 = #ffffff;
-
-[hints]
-#font = Monospace 10
-#foreground = #dcdccc
-#background = #3f3f3f
-#active_foreground = #e68080
-#active_background = #3f3f3f
-#padding = 2
-#border = #3f3f3f
-#border_width = 0.5
-#roundness = 2.0
-
-# vim: ft=dosini cms=#%s

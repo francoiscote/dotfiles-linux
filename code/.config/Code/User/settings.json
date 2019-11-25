@@ -1,9 +1,8 @@
 {
     "breadcrumbs.enabled": true,
     "diffEditor.renderSideBySide": false,
-    "editor.fontFamily": "Operator Mono SSm Lig, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "Operator Mono SSm Lig,'Courier New', monospace",
     "editor.fontLigatures": true,
-    "editor.fontSize": 14,
     "editor.formatOnPaste": false,
     "editor.formatOnSave": false,
     "editor.formatOnType": false,
@@ -30,7 +29,6 @@
       "terminal.ansiBrightBlack": "#e7cecd",
       "gitDecoration.ignoredResourceForeground": "#666d7d66"
     },
-    "workbench.colorTheme": "soft era",
     "workbench.statusBar.feedback.visible": false,
     "javascript.updateImportsOnFileMove.enabled": "never",
     "emmet.triggerExpansionOnTab": true,
@@ -156,7 +154,7 @@
     "material-icon-theme.activeIconPack": "react",
     "material-icon-theme.hidesExplorerArrows": true,
     "material-icon-theme.folders.theme": "classic",
-    "material-icon-theme.folders.color": "#c8b3b2",
+    "material-icon-theme.folders.color": "#42a5f5",
     "workbench.editor.closeEmptyGroups": false,
     "terminal.integrated.drawBoldTextInBrightColors": false,
     "terminal.integrated.fontWeightBold": "normal",
@@ -214,5 +212,6 @@
         "name": "Vue Green",
         "value": "#42b883"
       }
-    ]
+    ],
+    "workbench.colorTheme": "One Dark Pro"
   }

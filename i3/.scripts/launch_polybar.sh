@@ -8,7 +8,7 @@ killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # Launch polybar on both external monitors
-MONITOR=HDMI-0 polybar top &
+MONITOR=DP-0 polybar top &
 #MONITOR=DP1-2 polybar top &
 
 echo "Bars launched..."

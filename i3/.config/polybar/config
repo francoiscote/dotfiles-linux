@@ -8,20 +8,17 @@
 ;=====================================================
 
 [colors]
-background = #1F2126
-background-alpha = #CC1F2126
-background-alt = #404452
-foreground = #5F6B85
-foreground-alt = #95A2BB
+background = #f9f5f4
+background-alt = #f1ecee
+foreground = #65737E
+foreground-alt = #ABB2BF
 white =     #FFFFFF
-red =       #E06C75
-green =     #98C379
-yellow =    #E5C07B
-blue =      #56B6C2
-magenta =   #C678DD
-cyan =      #61AEEE
-primary = ${self.blue}
-secondary = ${self.yellow}
+red =       #db90a7
+green =     #87b6b6
+yellow =    #d3a656
+blue =      #32abde
+magenta =   #be88d9
+cyan =      #958ac5
 alert = ${self.red}
 
 stats-foreground = ${self.white}
@@ -39,7 +36,7 @@ fixed-center = true
 height = 24px
 
 background = ${colors.background}
-foreground = ${colors.foreground-alt}
+foreground = ${colors.foreground}
 
 line-size = 3
 line-color = #f00
@@ -53,9 +50,9 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = "xos4 Terminus:pixelsize=11;2"
-font-1 = "FontAwesome:size=8;3"
-
+font-0 = "Roboto:style=Medium:size=8;2"
+font-1 = "FontAwesome:size=10;3"
+font-2 = "icomoon:size=10;3"
 ;=====================================================
 ; BAR - TOP
 ;=====================================================
@@ -94,20 +91,21 @@ wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
+strip-wsnumbers = true
 
-label-mode-padding = 2
+label-mode-padding = 4
 label-mode-foreground = ${colors.white}
 label-mode-background = ${colors.alert}
 
 ; focused = Active workspace on focused monitor
 label-focused = %name%
-label-focused-foreground = ${colors.white}
-label-focused-background = ${colors.cyan}
+label-focused-foreground = ${colors.blue}
+label-focused-background = ${colors.background-alt}
 label-focused-padding = ${self.label-mode-padding}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
-label-unfocused-foreground = ${colors.foreground}
+label-unfocused-foreground = ${colors.foreground-alt}
 label-unfocused-padding = ${self.label-mode-padding}
 
 ; visible = Active workspace on unfocused monitor
@@ -133,7 +131,7 @@ date-alt = " %a %b %d %Y"
 time = "%k:%M"
 time-alt = "%T %Z"
 
-format-foreground = ${colors.foreground-alt}
+format-foreground = ${colors.foreground}
 
 label = "%date%, %time%"
 
@@ -147,6 +145,9 @@ interval = 3
 label = %output:0:90:...%
 format-padding = 5
 exec = ~/.scripts/polybar/mpris.sh
+
+click-left = "playerctl play-pause"
+click-right = "i3-msg workspace number 8"
 
 ;-----------------------------------------------------
 ; MODULE - PULSEAUDIO VOLUME
@@ -199,11 +200,9 @@ blacklist-0 = num lock
 format-padding = 2
 format-foreground = ${colors.yellow}
 format-prefix = " "
-;format-prefix-foreground = ${colors.foreground-alt}
-;format-prefix-underline = ${colors.secondary}
+;format-prefix-foreground = ${colors.foreground}
 
 label-layout = %layout%
-;label-layout-underline = ${colors.secondary}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
@@ -246,8 +245,8 @@ format = <ramp> <label>
 format-padding = 2
 format-warn = <ramp> <label-warn>
 
-label = %temperature%
-label-warn = %temperature%
+label = %temperature-c%
+label-warn = %temperature-c%
 label-foreground = ${colors.red}
 
 ramp-0 = ""
@@ -289,14 +288,14 @@ format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+;label-disconnected-foreground = ${colors.foreground}
 
 ramp-signal-0 = 
 ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-foreground = ${colors.foreground}
 
 ;-----------------------------------------------------
 ; MODULE - ETH
@@ -310,13 +309,13 @@ format-connected-padding = 1
 
 format-connected-foreground = ${colors.green}
 format-connected-prefix = " "
-;format-connected-prefix-foreground = ${colors.foreground-alt}
+;format-connected-prefix-foreground = ${colors.foreground}
 label-connected = %local_ip%
 
 format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+;label-disconnected-foreground = ${colors.foreground}
 
 
 ;-----------------------------------------------------
@@ -351,7 +350,7 @@ animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
 
 ;-----------------------------------------------------
@@ -373,7 +372,7 @@ label-close =  cancel
 label-close-foreground = ${colors.alert}
 label-close-padding = 3
 label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
+label-separator-foreground = ${colors.foreground}
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1

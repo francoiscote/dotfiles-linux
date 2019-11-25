@@ -69,6 +69,6 @@ vid_filemask=vid-$random_string
 help_color="#0C73C2"
 hidecursor=yes
 # slop options
-slop_border=1
-slop_color="255,0,0"
+slop_border=5
+slop_color="255,0,0,0.7"
 hidecursor=yes
