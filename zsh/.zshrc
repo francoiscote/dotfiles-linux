@@ -10,9 +10,9 @@ path=($DOTFILES/bin $path)
 fpath=($DOTFILES/lib/completions $fpath)
 
 export CLICOLOR=1
+export EDITOR=vim
 export QUOTING_STYLE=literal
 
-export EDITOR=vim
 
 # fix "xdg-open fork-bomb" export your preferred browser from here
 export BROWSER=/bin/google-chrome-stable
@@ -56,14 +56,6 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # -----------------------------------------
-# source Awesome Terminal Fonts codepoints
-# -----------------------------------------
-source /usr/share/fonts/awesome-terminal-fonts/devicons-regular.sh
-source /usr/share/fonts/awesome-terminal-fonts/fontawesome-regular.sh
-source /usr/share/fonts/awesome-terminal-fonts/octicons-regular.sh
-source /usr/share/fonts/awesome-terminal-fonts/pomicons-regular.sh
-
-# -----------------------------------------
 # SPACESHIP PROMPT
 # -----------------------------------------
 
@@ -73,10 +65,8 @@ prompt spaceship
 # -----------------------------------------
 # PATHS
 # -----------------------------------------
-# Zsh
-export PATH="$ZSH/bin:$PATH"
-# scripts
-export PATH="$HOME/.scripts:$PATH"
+# home folder's bin
+export PATH="$HOME/bin:$PATH"
 # local bin
 export PATH="$HOME/.local/bin:$PATH"
 # /usr/bin
@@ -99,7 +89,8 @@ for config_file ($DOTFILES/zsh/lib/*.zsh); do
 done
 
 # compinit must be done after sourcing all libs
-compinit -i -d "${HOME}/.zcompdump"
+#compinit -i -d "${HOME}/.zcompdump"
+compinit
 
 # -----------------------------------------
 # SHORTCUT COMMANDS

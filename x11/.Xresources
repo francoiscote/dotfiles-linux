@@ -1,0 +1,43 @@
+! XFT
+!----------------------------------
+Xft.dpi: 109
+Xft.antialias: true
+Xft.autohint: false   
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.lcdfilter:  lcddefault
+Xft.rgba: rgb
+
+! Colors
+!----------------------------------
+*foreground:   #abb2bf
+*background:   #282c34
+*cursorColor:  #abb2bf
+
+*color0:       #0f1011
+*color1:       #e06c75
+*color2:       #98c379
+*color3:       #e5c07b
+*color4:       #56b6c2
+*color5:       #c678dd
+*color6:       #61afef
+*color7:       #3e4451
+*color8:       #5C6370
+*color9:       #e06c75
+*color10:      #98c379
+*color11:      #e5c07b
+*color12:      #56b6c2
+*color13:      #c678dd
+*color14:      #61afef
+*color15:      #ffffff
+
+
+! Xcursor
+!----------------------------------
+Xcursor.theme: OpenZone_White_Slim
+Xcursor.size:  16
+
+! Xterm
+!----------------------------------
+XTerm*faceName: Operator Mono SSm:pixelsize=12:antialias=true
+XTerm*selectToClipboard: true

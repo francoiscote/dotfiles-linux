@@ -1,4 +1,13 @@
-### Installing extensions from the list
+# Visual Studio Code
+
+## Saving extensions
+
 ```
-cat extensions.txt | xargs -L1 code --install-extension
+code list-extensions > $DOTFILES/code extensions.txt
+```
+
+### Installing extensions from the list
+
+```
+cat $DOTFILES/code/extensions.txt | xargs -L1 code --install-extension
 ```
