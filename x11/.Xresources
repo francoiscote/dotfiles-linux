@@ -5,30 +5,30 @@ Xft.antialias: true
 Xft.autohint: false   
 Xft.hinting: true
 Xft.hintstyle: hintslight
-Xft.lcdfilter:  lcddefault
+Xft.lcdfilter: lcddefault
 Xft.rgba: rgb
 
 ! Colors
 !----------------------------------
-*foreground:   #abb2bf
-*background:   #282c34
+*foreground:   #c29ba3
+*background:   #f1ecee
 *cursorColor:  #abb2bf
 
-*color0:       #0f1011
-*color1:       #e06c75
-*color2:       #98c379
-*color3:       #e5c07b
-*color4:       #56b6c2
-*color5:       #c678dd
-*color6:       #61afef
-*color7:       #3e4451
-*color8:       #5C6370
-*color9:       #e06c75
-*color10:      #98c379
-*color11:      #e5c07b
-*color12:      #56b6c2
-*color13:      #c678dd
-*color14:      #61afef
+*color0:       #4A4543
+*color1:       #DB90A7
+*color2:       #87b6b6
+*color3:       #ffb4b8
+*color4:       #32abde
+*color5:       #be88d9
+*color6:       #958ac5
+*color7:       #f1ecee
+*color8:       #E7CECD
+*color9:       #EEAABE
+*color10:      #98c4ba
+*color11:      #e7d59a
+*color12:      #82b3e2
+*color13:      #ce9ae8
+*color14:      #b4addf
 *color15:      #ffffff
 
 

@@ -18,7 +18,7 @@ function run {
 #xrdb ~/.Xresources
 
 # Compositor
-run compton -b
+run picom -b
 
 # Polkit auth agent
 run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

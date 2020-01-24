@@ -12,6 +12,8 @@ fi
 
 xrdb -merge ~/.Xresources
 
+xmodmap ~/.Xmodmap
+
 # Keyboard Rate
 xset r rate 180 60
 

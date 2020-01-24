@@ -310,8 +310,8 @@
   # Reloads, kills and resrts
   bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
   bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-  bindsym $mod+t exec --no-startup-id killall compton
-  bindsym $mod+Ctrl+t exec --no-startup-id compton -b
+  bindsym $mod+t exec --no-startup-id killall picom
+  bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 
   # Screenshots using Teiler
   bindsym Print --release exec --no-startup-id "teiler"
@@ -457,7 +457,7 @@
 ###
 # Autostart applications
 ###
-exec --no-startup-id compton -b
+exec --no-startup-id picom -b
 exec --no-startup-id redshift-gtk
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 

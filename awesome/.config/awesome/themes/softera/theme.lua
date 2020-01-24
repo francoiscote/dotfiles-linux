@@ -25,45 +25,50 @@ local screen_height = awful.screen.focused().geometry.height
 -- FONT
 -- ==================================================================
 theme.font = "Google Sans Medium 9"
+theme.title_font = "Google Sans Bold 10"
 
 -- COLORS
 -- ==================================================================
 -- Get colors from .Xresources and set fallback colors
-theme.xbackground = xrdb.background or "#282c34"
-theme.xforeground = xrdb.foreground or "#abb2bf"
-theme.xcolor0 = xrdb.color0 or "#0f1011"
-theme.xcolor1 = xrdb.color1 or "#e06c75"
-theme.xcolor2 = xrdb.color2 or "#98c379"
-theme.xcolor3 = xrdb.color3 or "#e5c07b"
-theme.xcolor4 = xrdb.color4 or "#56b6c2"
-theme.xcolor5 = xrdb.color5 or "#c678dd"
-theme.xcolor6 = xrdb.color6 or "#61afef"
-theme.xcolor7 = xrdb.color7 or "#3e4451"
-theme.xcolor8 = xrdb.color8 or "#5C6370"
-theme.xcolor9 = xrdb.color9 or "#e06c75"
-theme.xcolor10 = xrdb.color10 or  "#98c379"
-theme.xcolor11 = xrdb.color11 or  "#e5c07b"
-theme.xcolor12 = xrdb.color12 or  "#56b6c2"
-theme.xcolor13 = xrdb.color13 or  "#c678dd"
-theme.xcolor14 = xrdb.color14 or  "#61afef"
+theme.xbackground = xrdb.background or "#f1ecee"
+theme.xforeground = xrdb.foreground or "#c29ba3"
+theme.xcolor0 = xrdb.color0 or "#4A4543"
+theme.xcolor1 = xrdb.color1 or "#DB90A7"
+theme.xcolor2 = xrdb.color2 or "#87b6b6"
+theme.xcolor3 = xrdb.color3 or "#ffb4b8"
+theme.xcolor4 = xrdb.color4 or "#32abde"
+theme.xcolor5 = xrdb.color5 or "#be88d9"
+theme.xcolor6 = xrdb.color6 or "#958ac5"
+theme.xcolor7 = xrdb.color7 or "#f1ecee"
+theme.xcolor8 = xrdb.color8 or "#E7CECD"
+theme.xcolor9 = xrdb.color9 or "#EEAABE"
+theme.xcolor10 = xrdb.color10 or  "#98c4ba"
+theme.xcolor11 = xrdb.color11 or  "#e7d59a"
+theme.xcolor12 = xrdb.color12 or  "#82b3e2"
+theme.xcolor13 = xrdb.color13 or  "#ce9ae8"
+theme.xcolor14 = xrdb.color14 or  "#b4addf"
 theme.xcolor15 = xrdb.color15 or  "#ffffff"
 
 
 -- This is how to get other .Xresources values (beyond colors 0-15, or custom variables)
 -- local cool_color = awesome.xrdb_get_value("", "color16")
 
-theme.bg_dark       = theme.xbackground
-theme.bg_normal     = theme.xcolor0
-theme.bg_focus      = theme.xcolor8
-theme.bg_urgent     = theme.xcolor8
-theme.bg_minimize   = theme.xcolor8
-theme.bg_systray    = theme.xcolor8
+theme.bg_dark       = theme.xcolor0
+theme.bg_normal     = theme.xbackground
+theme.bg_focus      = theme.xcolor7
+theme.bg_urgent     = theme.xcolor7
+theme.bg_minimize   = theme.xcolor7
+theme.bg_systray    = theme.xcolor7.."00"
 
-theme.fg_normal     = theme.xcolor8
-theme.fg_focus      = theme.xcolor4
-theme.fg_urgent     = theme.xcolor3
+theme.fg_normal     = theme.xforeground
+theme.fg_focus      = theme.xcolor0
+theme.fg_urgent     = theme.xcolor1
 theme.fg_minimize   = theme.xcolor8
 
+-- Wibar
+-- ==================================================================
+theme.wibar_bg = theme.bg_dark.."00" -- transparent
+theme.wibar_fg = theme.xcolor7
 
 -- GAPS
 -- ==================================================================
@@ -80,15 +85,8 @@ theme.border_radius = dpi(0)
 
 -- TAGS
 -- ==================================================================
-
--- Generate taglist squares:
-local taglist_square_size = dpi(4)
-theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
-    taglist_square_size, theme.fg_normal
-)
-theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
-    taglist_square_size, theme.fg_normal
-)
+-- theme.taglist_fg_focus = theme.xcolor0
+-- theme.taglist_bg_focus = theme.xcolor4
 
 -- Variables set for theming notifications:
 -- notification_font
@@ -102,6 +100,8 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 theme.menu_submenu_icon = this_theme_path.."submenu.png"
 theme.menu_height = dpi(15)
 theme.menu_width  = dpi(100)
+
+theme.systray_icon_spacing = 16
 
 -- You can add as many variables as
 -- you wish and access them by using

@@ -12,6 +12,17 @@ local naughty = require("naughty")
 
 local helpers = {}
 
+
+-- Rounded Corners Rectangles
+-- ==================================================================
+helpers.rrect = function(radius)
+    return function(cr, width, height)
+        gears.shape.rounded_rect(cr, width, height, radius)
+        --gears.shape.octogon(cr, width, height, radius)
+        --gears.shape.rounded_bar(cr, width, height)
+    end
+end
+
 -- VOLUME
 -- ==================================================================
 local volume_get_cmd = "pulseaudio-ctl full-status | cut -d ' ' -f1"
