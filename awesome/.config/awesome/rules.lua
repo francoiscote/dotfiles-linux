@@ -225,7 +225,7 @@ rules = {
         properties = {
             floating = true,
             width = screen_width * 0.6,
-            height = screen_height * 0.8
+            height = screen_width * 0.6 * 0.6
         },
         callback = function (c)
             awful.placement.centered(c,{honor_padding = true, honor_workarea=true})
@@ -296,7 +296,7 @@ rules = {
     {
         rule_any = {
             class = {
-                "Zoom"
+                "zoom"
             },
         },
         properties = { 

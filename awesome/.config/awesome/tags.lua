@@ -85,7 +85,7 @@ local tags = {
     master_fill_policy  = "master_width_factor",
     master_width_factor = 0.5,
     gap_single_client   = true,
-    gap                 = 50
+    gap                 = 30
   },
   {
     -- icon = dir .. 'terminal.png',

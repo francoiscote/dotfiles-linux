@@ -65,7 +65,7 @@ beautiful.init(themes_dir .. theme_name .. "/theme.lua")
 user = {
     terminal = "kitty",
     terminal_class = "kitty",
-    browser = "google-chrome",
+    browser = "google-chrome-stable",
     browser_class= "Google-chrome",
     file_manager = "nemo",
     file_manager_class="nemo",

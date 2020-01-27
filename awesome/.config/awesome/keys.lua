@@ -340,12 +340,14 @@ keys.globalkeys = gears.table.join(
         {description = "Pause", group = "media"}),
     awful.key( { }, "XF86AudioNext", function() awful.spawn.with_shell("playerctl next") end,
         {description = "Next Song", group = "media"}),
-    awful.key( { }, "XF86AudioPrevios", function() awful.spawn.with_shell("playerctl previous") end,
+    awful.key( { }, "XF86AudioPrev", function() awful.spawn.with_shell("playerctl previous") end,
         {description = "Previous Song", group = "media"})
 
 
 
 )
+
+local winsize_ratio = 0.6
 
 keys.clientkeys = gears.table.join(
     ---------------------------
@@ -373,37 +375,40 @@ keys.clientkeys = gears.table.join(
 
     -- WM Resize
     --------------------------
-    
-    -- T for tiny window
-    awful.key({ hyperkey }, "6",
+
+    -- Small
+    awful.key({ hyperkey }, "4",
     function (c)
-        helpers.float_and_resize(c, screen_width * 0.3, screen_height * 0.35)
+        local width = screen_width * 0.3
+        helpers.float_and_resize(c, width, width * winsize_ratio)
     end,
     {description = "tiny size", group = "client"}),
     
-    -- N for normal size (good for terminals)
-    awful.key({ hyperkey }, "7",
+    -- Normal (good for terminals)
+    awful.key({ hyperkey }, "5",
     function (c)
-        helpers.float_and_resize(c, screen_width * 0.45, screen_height * 0.5)
+        local width = screen_width * 0.45
+        helpers.float_and_resize(c, width, width * winsize_ratio)
     end,
     {description = "normal size", group = "client"}),
 
-    -- F for focused view
-    awful.key({ hyperkey }, "8",
+    -- Wide Normal (Spotify)
+    awful.key({ hyperkey }, "6",
     function (c)
-        helpers.float_and_resize(c, screen_width * 0.7, screen_height * 0.75)
+        local width = screen_width * 0.6
+        helpers.float_and_resize(c, width, width * winsize_ratio)
     end,
     {description = "focus size", group = "client"}),
     
-    -- V for vertical view
-    awful.key({ hyperkey }, "4",
+    -- Vertical
+    awful.key({ hyperkey }, "7",
     function (c)
-        helpers.float_and_resize(c, screen_width * 0.45, screen_height * 0.90)
+        helpers.float_and_resize(c, screen_width * 0.45, screen_height * 0.95)
     end,
     {description = "vertical size", group = "client"}),
 
     -- Fullscreen
-    awful.key({ hyperkey }, "5",
+    awful.key({ hyperkey }, "8",
     function (c)
         c.fullscreen = not c.fullscreen
         c:raise()

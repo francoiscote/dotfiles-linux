@@ -23,18 +23,18 @@ mylauncher = awful.widget.launcher({
 local textclock = wibox.widget.textclock('<span font="' .. beautiful.title_font ..'">%l:%M %p</span>', 1)
 
 -- Clock / Calendar 12AM/PM fornatan font="Roboto Mono bold 11">%I\n%M</span>\n<span font="Roboto Mono bold 9">%p</span>')
-local clock_widget = wibox.container.margin(textclock, dpi(0), dpi(0))
+local clock_widget = wibox.container.margin(textclock, dpi(0), dpi(0), dpi(0), dpi(0))
 
 -- Alternative to naughty.notify - tooltip. You can compare both and choose the preferred one
 awful.tooltip(
   {
-    objects = {clock_widget},
+    objects = {textclock},
     mode = 'outside',
-    align = 'right',
+    preferred_positions = {'bottom', 'right', 'left', 'top'},
+    preferred_alignments = {'middle', 'front', 'back'},
     timer_function = function()
       return os.date("The date today is %B %d, %Y. And it's fucking %A!")
     end,
-    preferred_positions = {'right', 'left', 'top', 'bottom'},
     margin_leftright = dpi(8),
     margin_topbottom = dpi(8)
   }
@@ -68,7 +68,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
   s.systray = wibox.widget.systray()
   s.systray.visible = false
   s.systray:set_horizontal(true)
-  s.systray:set_base_size(18)
+  s.systray:set_base_size(26)
   s.systray.opacity = 0.3
 end)
 

@@ -19,8 +19,8 @@ windows:
     panes:
       - null
       - null
-  - window_name: design-v2
-    start_directory: ~/Code/design-v2.www.invisionapp.com
+  - window_name: www-coldfusion
+    start_directory: ~/Code/invision-www-coldfusion
     layout: main-horizontal
     panes:
       - null

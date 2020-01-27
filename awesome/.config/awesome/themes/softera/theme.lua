@@ -101,7 +101,7 @@ theme.menu_submenu_icon = this_theme_path.."submenu.png"
 theme.menu_height = dpi(15)
 theme.menu_width  = dpi(100)
 
-theme.systray_icon_spacing = 16
+-- theme.systray_icon_spacing = 16
 
 -- You can add as many variables as
 -- you wish and access them by using
