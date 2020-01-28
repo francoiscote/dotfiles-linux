@@ -22,7 +22,7 @@ if user.anti_aliasing then
   -- ------------------
   wants_equal_padding = function(c)
     local class = c.class
-    if  class == "kitty" or
+    if  class == "Alacritty" or
         class == "editor" or
         class == "Nemo" or
         class == "music" or

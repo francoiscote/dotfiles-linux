@@ -80,7 +80,7 @@ keys.globalkeys = gears.table.join(
     -- Spawn Main terminal (appears in Tags 1 and 2 only)
     awful.key({ hyperkey, altkey }, "Return", 
         function() 
-            awful.spawn(user.terminal .. " --name main-terminal tmuxp load invision-dbco invision-inside-design invision-marketing invision-www invision stream personal") 
+            awful.spawn(user.terminal .. " --class main-terminal --command tmuxp load invision-dbco invision-inside-design invision-marketing invision-www invision stream personal") 
         end,
         {description = "open Main terminal", group = "launcher"}
     ),
