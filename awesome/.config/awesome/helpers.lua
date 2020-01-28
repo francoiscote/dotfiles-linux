@@ -218,6 +218,7 @@ function helpers.float_and_resize(c, width, height)
     c.height = height
     awful.placement.centered(c,{honor_workarea=true, honor_padding = true})
     awful.client.property.set(c, 'floating_geometry', c:geometry())
+    c.fullscreen = false
     c.floating = true
     c:raise()
 end
