@@ -49,24 +49,16 @@ rules = {
     -- Floating clients.
     { rule_any = {
         instance = {
-          "DTA",  -- Firefox addon DownThemAll.
-          "copyq",  -- Includes session name in class.
-          "pinentry",
           "floating_terminal",
         },
         class = {
           "Arandr",
           "Blueman-manager",
+          "Gnome-calculator",
+          "Font-manager",
           "pritunl",
-          "Gpick",
-          "Kruler",
-          "MessageWin",  -- kalarm.
           "Lxappearance",
-          "Sxiv",
-          "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
-          "Wpa_gui",
-          "veromix",
-          "xtightvncviewer"
+          "Zeal"
         },
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
@@ -75,8 +67,6 @@ rules = {
           "Event Tester",  -- xev.
         },
         role = {
-          "AlarmWindow",  -- Thunderbird's calendar.
-          "ConfigManager",  -- Thunderbird's about:config.
           "GtkFileChooserDialog",
           "conversation",
           "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
@@ -117,7 +107,7 @@ rules = {
                 "URxvt",
             },
         },
-        properties = { width = screen_width * 0.45, height = screen_height * 0.5 }
+        properties = { width = screen_width * 0.45, height = screen_width * 0.45 * 0.6 }
     },
 
     -- "Switch to tag"
@@ -216,10 +206,12 @@ rules = {
     },
 
     -- Music clients
+    -- Notion
     {
         rule_any = {
             class = {
                 "Spotify",
+                "Notion",
             }
         },
         properties = {
@@ -272,11 +264,20 @@ rules = {
                 "Google-chrome"
             },
         },
-        except_any = {
-            role = { "GtkFileChooserDialog" },
-            type = { "dialog" }
-        },
         properties = { screen = 1, tag = "2" },
+    },
+
+    -- Picture in Picture
+    {
+        rule_any = {
+            name = {
+                "Picture in picture",
+            },
+        },
+        properties = { screen = 1, tags = { "1", "2" }},
+        callback = function (c)
+            awful.client.swap.bydirection("up", c)
+        end
     },
 
     -- Main Terminal (Tags 1 and 2)
@@ -302,7 +303,20 @@ rules = {
         properties = { 
             screen = 1,  
             tags = {"1", "2"}
-        }
+        },
+        callback = function (c)
+            awful.client.swap.bydirection("up", c)
+        end
+    },
+
+    -- Notion
+    {
+        rule_any = {
+            class = {
+                "Notion",
+            },
+        },
+        properties = { screen = 1, tag = "6" }
     },
 
     -- Chatting
@@ -335,7 +349,7 @@ rules = {
     {
         rule_any = {
             class = {
-                "Pritunl",
+                "pritunl",
             },
         },
         properties = { screen = 1, tag = "9" }

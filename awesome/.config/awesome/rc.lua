@@ -63,8 +63,8 @@ beautiful.init(themes_dir .. theme_name .. "/theme.lua")
 -- USER VARIABLES
 -- ==================================================================
 user = {
-    terminal = "alacritty",
-    terminal_class = "Alacritty",
+    terminal = "kitty",
+    terminal_class = "kitty",
     browser = "google-chrome-stable",
     browser_class= "Google-chrome",
     file_manager = "nemo",
@@ -204,6 +204,12 @@ if beautiful.border_width > 0 then
   client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
   client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 end
+
+-- Focus urgent clients automatically
+client.connect_signal("property::urgent", function(c)
+    c.minimized = false
+    c:jump_to()
+end)
 
 -- Set mouse resize mode (live or after)
 awful.mouse.resize.set_mode("live")

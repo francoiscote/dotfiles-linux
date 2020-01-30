@@ -31,13 +31,7 @@ Xft.rgba: rgb
 *color14:      #b4addf
 *color15:      #ffffff
 
-
 ! Xcursor
 !----------------------------------
 Xcursor.theme: OpenZone_White_Slim
 Xcursor.size:  16
-
-! Xterm
-!----------------------------------
-XTerm*faceName: Operator Mono SSm:pixelsize=12:antialias=true
-XTerm*selectToClipboard: true

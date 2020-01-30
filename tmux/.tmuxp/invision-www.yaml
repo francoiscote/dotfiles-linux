@@ -19,6 +19,12 @@ windows:
     panes:
       - null
       - null
+  - window_name: studio
+    start_directory: ~/Code/invision-studio
+    layout: main-horizontal
+    panes:
+      - null
+      - null
   - window_name: www-coldfusion
     start_directory: ~/Code/invision-www-coldfusion
     layout: main-horizontal

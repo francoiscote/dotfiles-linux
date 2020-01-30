@@ -67,6 +67,13 @@ keys.globalkeys = gears.table.join(
         end,
         {description = "rofi launcher", group = "launcher"}
     ),
+    -- Rofi
+    awful.key({ hyperkey }, "e",
+    function()
+            awful.spawn.with_shell("rofimoji")
+        end,
+        {description = "rofimoji launcher", group = "launcher"}
+    ),
     -- Terminal
     awful.key({ hyperkey }, "Return", 
         function () awful.spawn(user.terminal) end,
@@ -80,7 +87,7 @@ keys.globalkeys = gears.table.join(
     -- Spawn Main terminal (appears in Tags 1 and 2 only)
     awful.key({ hyperkey, altkey }, "Return", 
         function() 
-            awful.spawn(user.terminal .. " --class main-terminal --command tmuxp load invision-dbco invision-inside-design invision-marketing invision-www invision stream personal") 
+            awful.spawn(user.terminal .. " --class=main-terminal tmuxp load invision-dbco invision-inside-design invision-marketing invision-www invision stream personal") 
         end,
         {description = "open Main terminal", group = "launcher"}
     ),
@@ -104,9 +111,9 @@ keys.globalkeys = gears.table.join(
     -- Terminal
     awful.key({ hyperkey }, "l",
         function()
-            helpers.run_or_raise({class = user.terminal_class}, false, user.terminal)
+            helpers.run_or_raise({class = }, false, user.terminal)
         end,
-        {description = "Run or Raise Terminal", group = "launcher"}
+        {description = "Run or Raise Main Terminal", group = "launcher"}
     ),
 
     -- Slack
@@ -136,6 +143,21 @@ keys.globalkeys = gears.table.join(
             helpers.run_or_raise({class = "Spotify"}, false, "spotify")
         end,
         {description = "Run or Raise spotify", group = "launcher"}
+    ),
+    -- Notion
+    awful.key({ hyperkey }, "n",
+        function()
+            helpers.run_or_raise({class = "Notion"}, false, 'notion-app')
+        end,
+        {description = "Run or Raise File Manager", group = "launcher"}
+    ),
+
+    -- File Manager
+    awful.key({ hyperkey }, ".",
+        function()
+            helpers.run_or_raise({class = user.file_manager_class}, false, user.file_manager)
+        end,
+        {description = "Run or Raise File Manager", group = "launcher"}
     ),
 
 
@@ -451,7 +473,7 @@ keys.clientkeys = gears.table.join(
         helpers.single_double_tap(
             nil,
             function ()
-                helpers.float_and_resize(c, screen_width * 0.65, screen_height * 0.9)
+                helpers.float_and_resize(c, screen_width * 0.45, screen_width * 0.45 * 0.6)
             end
         )
     end),
