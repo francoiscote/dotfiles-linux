@@ -196,7 +196,8 @@ rules = {
         rule_any = {
             class = {
                 "Nemo",
-                "Thunar"
+                "Thunar",
+                "file-manager",
             },
         },
         except_any = {
