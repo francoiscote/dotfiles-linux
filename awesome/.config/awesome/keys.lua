@@ -63,7 +63,7 @@ keys.globalkeys = gears.table.join(
     -- Rofi
     awful.key({ hyperkey }, "d",
     function()
-            awful.spawn.with_shell("rofi -modi drun -show drun")
+            awful.spawn.with_shell("rofi -show drun -modi \"drun,window\" ")
         end,
         {description = "rofi launcher", group = "launcher"}
     ),
