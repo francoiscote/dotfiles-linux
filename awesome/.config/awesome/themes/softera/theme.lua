@@ -39,7 +39,7 @@ theme.xcolor3 = xrdb.color3 or "#ffb4b8"
 theme.xcolor4 = xrdb.color4 or "#32abde"
 theme.xcolor5 = xrdb.color5 or "#be88d9"
 theme.xcolor6 = xrdb.color6 or "#958ac5"
-theme.xcolor7 = xrdb.color7 or "#f1ecee"
+theme.xcolor7 = xrdb.color7 or "#cfcccc"
 theme.xcolor8 = xrdb.color8 or "#E7CECD"
 theme.xcolor9 = xrdb.color9 or "#EEAABE"
 theme.xcolor10 = xrdb.color10 or  "#98c4ba"
@@ -55,10 +55,10 @@ theme.xcolor15 = xrdb.color15 or  "#ffffff"
 
 theme.bg_dark       = theme.xcolor0
 theme.bg_normal     = theme.xbackground
-theme.bg_focus      = theme.xcolor7
-theme.bg_urgent     = theme.xcolor7
-theme.bg_minimize   = theme.xcolor7
-theme.bg_systray    = theme.xcolor7.."00"
+theme.bg_focus      = theme.xbackground
+theme.bg_urgent     = theme.xbackground
+theme.bg_minimize   = theme.xbackground
+theme.bg_systray    = theme.xbackground.."00"
 
 theme.fg_normal     = theme.xforeground
 theme.fg_focus      = theme.xcolor0
@@ -68,7 +68,7 @@ theme.fg_minimize   = theme.xcolor8
 -- Wibar
 -- ==================================================================
 theme.wibar_bg = theme.bg_dark.."00" -- transparent
-theme.wibar_fg = theme.xcolor7
+theme.wibar_fg = theme.xcolor15
 
 -- GAPS
 -- ==================================================================

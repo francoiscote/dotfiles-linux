@@ -20,8 +20,8 @@ configuration {
 window {
     transparency:                   "real";
     background-color:               @background;
-    border:                         2px solid;
-    border-color:                   @selected-text-color;
+    border:                         3px solid;
+    border-color:                   #958ac5;
 }
 
 prompt {
