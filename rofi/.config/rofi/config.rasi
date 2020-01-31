@@ -1,9 +1,9 @@
 configuration {
     show-icons:                     true;
-    icon-theme:                     "McMojave-circle-dark";
+    icon-theme:                     "Flat-Remix-Blue-Light";
     font:                           "Google Sans 14";
     lines:                           10;
-    width: 30;
+    width: 20;
     location: 0;
 }
 
@@ -20,6 +20,8 @@ configuration {
 window {
     transparency:                   "real";
     background-color:               @background;
+    border:                         2px solid;
+    border-color:                   @selected-text-color;
 }
 
 prompt {
@@ -29,7 +31,8 @@ prompt {
 entry  {
     margin:                         10px;
     padding:                        20px;
-    background-color:               #ffffff50;
+    background-color:               #ffffff;
+    border:                         2px solid;
     border-color:                   @text-color;
     font:                           "Google Sans 15";
 }
