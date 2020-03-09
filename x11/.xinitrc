@@ -17,7 +17,13 @@ fi
 # source .Xresources
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
+# start awesome
+exec awesome
+
 # start GNOME
-export XDG_SESSION_TYPE=x11
-export GDK_BACKEND=x11
-exec gnome-session
+# export XDG_SESSION_TYPE=x11
+# export GDK_BACKEND=x11
+# exec gnome-session
+
+# start Xfce
+# exec startxfce4

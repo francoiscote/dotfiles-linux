@@ -66,7 +66,7 @@ prompt spaceship
 # PATHS
 # -----------------------------------------
 # home folder's bin
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
 # local bin
 export PATH="$HOME/.local/bin:$PATH"
 # /usr/bin
@@ -95,9 +95,9 @@ compinit
 # -----------------------------------------
 # SHORTCUT COMMANDS
 # -----------------------------------------
-# c -> ~/Code/
-c() { cd ~/Code/$1; }
-_c() { _files -W ~/Code -/; }
+# c -> ~/code/
+c() { cd ~/code/$1; }
+_c() { _files -W ~/code -/; }
 compdef _c c
 
 # h -> ~/
