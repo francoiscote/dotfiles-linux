@@ -5,6 +5,9 @@ local gears = require("gears")
 local beautiful = require("beautiful")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
+local cyclefocus = require('cyclefocus')
+cyclefocus.show_clients = false
+
 local helpers = require("helpers")
 
 local keys = {}
@@ -36,6 +39,14 @@ keys.globalkeys = gears.table.join(
     -- WM Generic
     --------------------------
     
+    -- Alt-Tab
+    awful.key({ altkey }, "Tab", function(c)
+        cyclefocus.cycle({modifier="Alt_L"})
+    end),
+    -- modkey+Shift+Tab: backwards
+    awful.key({ altkey, "Shift" }, "Tab", function(c)
+        cyclefocus.cycle({modifier="Alt_L"})
+    end),
     -- Gap control
     --------------------------
     awful.key({ hyperkey }, "]",
@@ -81,13 +92,13 @@ keys.globalkeys = gears.table.join(
     ),
     -- Spawn Floating Terminal
     awful.key({ hyperkey, shiftkey }, "Return", 
-        function () awful.spawn(user.terminal, { floating = true }) end,
+        function () awful.spawn(user.terminal .. " --class floating_terminal", { floating = true }) end,
         {description = "open floating terminal", group = "launcher"}
     ),
     -- Spawn Main terminal (appears in Tags 1 and 2 only)
     awful.key({ hyperkey, altkey }, "Return", 
         function() 
-            awful.spawn(user.terminal .. " --class=" .. user.main_terminal_class .. " tmuxp load invision-dbco invision-inside-design invision-marketing invision-www invision stream personal") 
+            awful.spawn(user.terminal .. " --class " .. user.main_terminal_class .. " --command tmuxp load invision-dbco invision-inside-design invision-marketing invision-www invision stream personal") 
         end,
         {description = "open Main terminal", group = "launcher"}
     ),
@@ -111,7 +122,7 @@ keys.globalkeys = gears.table.join(
     -- Main Terminal
     awful.key({ hyperkey }, "l",
         function()
-            helpers.run_or_raise({class = user.main_terminal_class}, false, user.terminal)
+            helpers.run_or_raise({instance = user.main_terminal_class}, false, user.terminal)
         end,
         {description = "Run or Raise Main Terminal", group = "launcher"}
     ),

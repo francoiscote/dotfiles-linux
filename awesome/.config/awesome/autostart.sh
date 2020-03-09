@@ -23,9 +23,9 @@ run picom -b
 # Polkit auth agent
 run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-run greenclip daemon
+# run greenclip daemon
 
 # Applets
-run blueman-applet
+# run blueman-applet
 run redshift-gtk
 run nm-applet

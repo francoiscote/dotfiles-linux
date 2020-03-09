@@ -4,8 +4,8 @@ local xresources = require("beautiful.xresources")
 local xrdb = xresources.get_current_theme()
 local dpi = xresources.apply_dpi
 
-local themes_path = os.getenv("HOME") .. ".config/awesome/themes/"
-local theme_name = "onedark"
+local themes_path = os.getenv("HOME") .. "/.config/awesome/themes/"
+local theme_name = "softera"
 local this_theme_path = themes_path .. theme_name .. "/"
 
 local theme = {}
@@ -24,8 +24,8 @@ local screen_height = awful.screen.focused().geometry.height
 
 -- FONT
 -- ==================================================================
-theme.font = "Google Sans Medium 9"
-theme.title_font = "Google Sans Bold 10"
+theme.font = "Cozette 8"
+theme.title_font = "Cozette 8"
 
 -- COLORS
 -- ==================================================================

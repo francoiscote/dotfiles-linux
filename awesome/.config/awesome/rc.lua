@@ -63,12 +63,12 @@ beautiful.init(themes_dir .. theme_name .. "/theme.lua")
 -- USER VARIABLES
 -- ==================================================================
 user = {
-    terminal = "kitty",
-    terminal_class = "kitty",
+    terminal = "alacritty",
+    terminal_class = "Alacritty",
     main_terminal_class = "main-terminal",
-    browser = "google-chrome-stable",
-    browser_class= "Google-chrome",
-    file_manager = "kitty --class=file-manager ranger",
+    browser = "firefox-developer-edition",
+    browser_class= "firefoxdeveloperedition",
+    file_manager = "alacritty --class file-manager --command ranger",
     file_manager_class="file-manager",
     editor =  "code",
     editor_class="Code",

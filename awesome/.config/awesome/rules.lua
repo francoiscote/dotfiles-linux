@@ -50,6 +50,7 @@ rules = {
     { rule_any = {
         instance = {
           "floating_terminal",
+          "file-manager",
         },
         class = {
           "Arandr",
