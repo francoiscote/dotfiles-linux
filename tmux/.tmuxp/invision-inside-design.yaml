@@ -1,14 +1,14 @@
 session_name: InVision Inside Design
-start_directory: ~/Code
+start_directory: ~/code
 windows:
   - window_name: inside-design
-    start_directory: ~/Code/invision-inside-design
+    start_directory: ~/code/invision-inside-design
     layout: main-horizontal
     panes:
       - null
       - null
   - window_name: blog-cms
-    start_directory: ~/Code/invision-www-blog-cms
+    start_directory: ~/code/invision-www-blog-cms
     layout: main-horizontal
     panes:
       - null

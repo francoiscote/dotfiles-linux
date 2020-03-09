@@ -13,17 +13,17 @@ windows:
       - null
   - window_name: soft-era
     layout: main-horizontal
-    start_directory: ~/Code/soft-era-vs-code
+    start_directory: ~/code/soft-era-vs-code
     panes:
       - null
   - window_name: francoiscote.net
-    start_directory: ~/Code/francoiscote.net
+    start_directory: ~/code/francoiscote.net
     layout: main-horizontal
     panes:
       - null
       - null
   - window_name: adventofcode
-    start_directory: ~/Code/adventofcode
+    start_directory: ~/code/adventofcode
     layout: main-horizontal
     panes:
       - null
