@@ -39,17 +39,6 @@ setopt interactivecomments
 autoload -U compinit
 
 # -----------------------------------------
-# OH-MY-ZSH
-# -----------------------------------------
-# Path to your oh-my-zsh installation.
-export ZSH="/usr/share/oh-my-zsh"
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-plugins=(git docker docker-compose docker-machine yarn)
-
-source $ZSH/oh-my-zsh.sh
-
-# -----------------------------------------
 # ZSH plugins
 # -----------------------------------------
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 
@@ -72,7 +61,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # /usr/bin
 export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
 # Node
-export PATH="`yarn global bin`:$PATH"
 export PATH="$HOME/.node_modules/bin:$PATH"
 export npm_config_prefix=~/.node_modules
 # ruby
